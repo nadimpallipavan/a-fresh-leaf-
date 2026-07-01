@@ -8,6 +8,7 @@ import { AnimatedFeatureCard } from "./components/ui/animated-feature-card";
 import { InteractiveHoverLinks } from "./components/ui/interactive-hover-links";
 import { Marquee } from "./components/ui/marquee";
 import { Button } from "./components/ui/button";
+import { CardStack } from "./components/ui/card-stack";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -95,6 +96,14 @@ const servicesList = [
     color: "orange"
   }
 ];
+
+const cardStackItems = servicesList.map(s => ({
+  id: s.index,
+  title: s.tag,
+  description: s.title,
+  imageSrc: s.imageSrc,
+  href: "#estimate"
+}));
 
 const mobileNavLinks = [
   {
@@ -573,6 +582,19 @@ export default function App() {
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">Our Core Services</h2>
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
+          </div>
+
+          <div className="mb-20 flex justify-center max-w-full overflow-hidden">
+            <CardStack
+              items={cardStackItems}
+              initialIndex={0}
+              autoAdvance
+              intervalMs={3000}
+              pauseOnHover
+              showDots
+              cardWidth={480}
+              cardHeight={300}
+            />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
