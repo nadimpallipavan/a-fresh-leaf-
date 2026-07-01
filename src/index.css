@@ -32,6 +32,11 @@
   }
 }
 
+:root {
+  --demo-bg: #ffffff;
+  --demo-text: #1a1a1a;
+}
+
 @utility glass {
   background: rgba(12, 26, 16, 0.6);
   backdrop-filter: blur(12px);

@@ -9,6 +9,7 @@ import { InteractiveHoverLinks } from "./components/ui/interactive-hover-links";
 import { Marquee } from "./components/ui/marquee";
 import { Button } from "./components/ui/button";
 import { CardStack } from "./components/ui/card-stack";
+import { TextReveal } from "./components/ui/cascade-text";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -581,7 +582,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">Our Core Services</h2>
+            <TextReveal 
+              text="Our Core Services"
+              as="h2"
+              className="font-display font-extrabold text-white mt-3 text-center"
+              fontSize="clamp(2.2rem, 5vw, 3rem)"
+              color="white"
+              hoverColor="#55b038"
+            />
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
             
             {/* Rising Glow particle emitter */}
