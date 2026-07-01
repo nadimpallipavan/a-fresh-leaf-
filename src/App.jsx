@@ -36,63 +36,63 @@ const servicesList = [
     index: "001",
     tag: "Website Design & Rebuilds",
     title: "Hand-crafted, custom-coded layouts optimized for mobile performance and visitor conversion.",
-    imageSrc: "",
+    imageSrc: "/images/web_design_service.jpg",
     color: "orange"
   },
   {
     index: "002",
     tag: "Website Speed & Trust Cleanup",
     title: "Diagnostic and cleanup sweeps targeting 90+ Core Web Vitals, script cleanups, and trust elements.",
-    imageSrc: "",
+    imageSrc: "/images/speed_cleanup_service.jpg",
     color: "blue"
   },
   {
     index: "003",
     tag: "AI Assistants & Chat Experiences",
     title: "Custom-trained AI agents and automated support chat setups mapped to your business workflows.",
-    imageSrc: "",
+    imageSrc: "/images/ai_chat_service.jpg",
     color: "purple"
   },
   {
     index: "004",
     tag: "Business Automation & Workflows",
     title: "Lead nurturing sequences, automated calendar booking, and CRM system integrations.",
-    imageSrc: "",
+    imageSrc: "/images/automation_service.jpg",
     color: "green"
   },
   {
     index: "005",
     tag: "Hosting & Website Care Plans",
     title: "Enterprise cloud hosting, automated daily backups, real-time security, and updates.",
-    imageSrc: "",
+    imageSrc: "/images/hosting_care_service.jpg",
     color: "orange"
   },
   {
     index: "006",
     tag: "Client Intake & Client Portals",
     title: "Bespoke onboarding forms and client-area dashboard designs to streamline communication.",
-    imageSrc: "",
+    imageSrc: "/images/client_intake_service.jpg",
     color: "purple"
   },
   {
     index: "007",
     tag: "CRM & Sales-Support Systems",
     title: "High-performing contact capture, sales pipelines, and automatic notification triggers.",
-    imageSrc: "",
+    imageSrc: "/images/crm_sales_service.jpg",
     color: "blue"
   },
   {
     index: "008",
     tag: "Branding & Mobile-First UX",
     title: "Refined brand typography, mobile usability testing, and conversion-centered trust indicators.",
-    imageSrc: "",
+    imageSrc: "/images/branding_ux_service.jpg",
     color: "green"
   },
   {
     index: "009",
     tag: "DevOps, QA & Rollback Backups",
     title: "Professional version control setups, staging environments, QA checks, and rollback backups.",
-    imageSrc: "",
+    imageSrc: "/images/devops_qa_service.jpg",
     color: "orange"
   }
 
