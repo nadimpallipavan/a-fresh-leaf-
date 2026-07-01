@@ -1,15 +1,27 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-export const RisingGlow = ({
+type RisingGlowProps = {
+  width?: number | string;
+  height?: number | string;
+  particleCount?: number;
+  particleColor?: string;
+  className?: string;
+};
+
+export const RisingGlow: React.FC<RisingGlowProps> = ({
   width = "100%",
   height = 120,
   particleCount = 20,
   particleColor = "#00f7ff",
   className,
 }) => {
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<
+    { left: number; size: number; delay: number }[]
+  >([]);
 
   useEffect(() => {
     const arr = Array.from({ length: particleCount }, () => ({

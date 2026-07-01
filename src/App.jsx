@@ -579,10 +579,81 @@ export default function App() {
       {currentPage === "services" && (
       <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">Our Core Services</h2>
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
+            
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
+          </div>
+
+          {/* Moving Marquee banner */}
+          <div className="w-full border-y border-leaf-900/40 py-6 mb-20 select-none">
+            <Marquee duration={30} pauseOnHover className="text-white">
+              <div className="flex items-center gap-12 text-sm md:text-base font-medium tracking-wider uppercase font-display">
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Website Design & Rebuilds</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+                
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Website Speed & Trust Cleanup</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+                
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>AI Assistants & Chat Experiences</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+                
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Business Automation & Workflows</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+                
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Hosting & Website Care Plans</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+                
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Client Intake & Client Portals</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>CRM & Sales-Support Systems</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>Branding & Mobile-First UX</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+
+                <span className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <span>DevOps, QA & Rollback Backups</span>
+                </span>
+                <span className="text-leaf-800">•</span>
+              </div>
+            </Marquee>
           </div>
 
           <div className="mb-20 flex justify-center max-w-full overflow-hidden">
