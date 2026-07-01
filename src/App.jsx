@@ -582,14 +582,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
-            <TextReveal 
-              text="Our Core Services"
-              as="h2"
-              className="font-display font-extrabold text-white mt-3 text-center"
-              fontSize="clamp(2.2rem, 5vw, 3rem)"
-              color="white"
-              hoverColor="#55b038"
-            />
+            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3 text-center">Our Core Services</h2>
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
             
             {/* Rising Glow particle emitter */}
