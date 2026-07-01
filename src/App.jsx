@@ -36,65 +36,66 @@ const servicesList = [
     index: "001",
     tag: "Website Design & Rebuilds",
     title: "Hand-crafted, custom-coded layouts optimized for mobile performance and visitor conversion.",
-    imageSrc: "/images/web_design_mockup.jpg",
+    imageSrc: "",
     color: "orange"
   },
   {
     index: "002",
     tag: "Website Speed & Trust Cleanup",
     title: "Diagnostic and cleanup sweeps targeting 90+ Core Web Vitals, script cleanups, and trust elements.",
-    imageSrc: "/images/page_speed_mockup.jpg",
+    imageSrc: "",
     color: "blue"
   },
   {
     index: "003",
     tag: "AI Assistants & Chat Experiences",
     title: "Custom-trained AI agents and automated support chat setups mapped to your business workflows.",
-    imageSrc: "/images/product_shot.jpg",
+    imageSrc: "",
     color: "purple"
   },
   {
     index: "004",
     tag: "Business Automation & Workflows",
     title: "Lead nurturing sequences, automated calendar booking, and CRM system integrations.",
-    imageSrc: "/images/email_automation_mockup.png",
+    imageSrc: "",
     color: "green"
   },
   {
     index: "005",
     tag: "Hosting & Website Care Plans",
     title: "Enterprise cloud hosting, automated daily backups, real-time security, and updates.",
-    imageSrc: "/images/wordpress_maintenance_mockup.png",
+    imageSrc: "",
     color: "orange"
   },
   {
     index: "006",
     tag: "Client Intake & Client Portals",
     title: "Bespoke onboarding forms and client-area dashboard designs to streamline communication.",
-    imageSrc: "/images/web_design.jpg",
+    imageSrc: "",
     color: "purple"
   },
   {
     index: "007",
     tag: "CRM & Sales-Support Systems",
     title: "High-performing contact capture, sales pipelines, and automatic notification triggers.",
-    imageSrc: "/images/seo_traffic.jpg",
+    imageSrc: "",
     color: "blue"
   },
   {
     index: "008",
     tag: "Branding & Mobile-First UX",
     title: "Refined brand typography, mobile usability testing, and conversion-centered trust indicators.",
-    imageSrc: "/images/seo_mockup.jpg",
+    imageSrc: "",
     color: "green"
   },
   {
     index: "009",
     tag: "DevOps, QA & Rollback Backups",
     title: "Professional version control setups, staging environments, QA checks, and rollback backups.",
-    imageSrc: "/images/woocommerce_mockup.png",
+    imageSrc: "",
     color: "orange"
   }
+
 ];
 
 const cardStackItems = servicesList.map(s => ({
@@ -595,20 +596,6 @@ export default function App() {
               cardWidth={480}
               cardHeight={300}
             />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesList.map((service) => (
-              <AnimatedFeatureCard
-                key={service.index}
-                index={service.index}
-                tag={service.tag}
-                title={service.title}
-                imageSrc={service.imageSrc}
-                color={service.color}
-                className="mx-auto"
-              />
-            ))}
           </div>
         </div>
       </section>
