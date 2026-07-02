@@ -58,18 +58,42 @@ export function LeadFunnel({ initialUrl = "", onComplete }: { initialUrl?: strin
     }
   };
 
+  const [submitting, setSubmitting] = useState(false);
+
   const handleBack = () => {
     setStep((prev) => prev - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone || !formData.callTime) return;
     
-    // Complete funnel step
-    setStep(6);
-    if (onComplete) {
-      onComplete(formData);
+    setSubmitting(true);
+
+    try {
+      const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL || "";
+      if (webhookUrl) {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+      } else {
+        console.log("No VITE_N8N_WEBHOOK_URL environment variable configured. Form data:", formData);
+      }
+    } catch (err) {
+      console.error("Failed to submit form to n8n webhook:", err);
+    } finally {
+      // Simulate short pause for natural UX
+      setTimeout(() => {
+        setSubmitting(false);
+        setStep(6);
+        if (onComplete) {
+          onComplete(formData);
+        }
+      }, 800);
     }
   };
 
@@ -114,7 +138,21 @@ export function LeadFunnel({ initialUrl = "", onComplete }: { initialUrl?: strin
       )}
 
       <AnimatePresence mode="wait" custom={step}>
-        {scanning ? (
+        {submitting ? (
+          <motion.div
+            key="submitting"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="flex flex-col items-center justify-center py-10"
+          >
+            <div className="w-12 h-12 border-4 border-leaf-500/25 border-t-leaf-500 rounded-full animate-spin mb-6" />
+            <p className="text-leaf-300 font-mono text-sm animate-pulse text-center">
+              Queueing your custom audit callback...<br />
+              <span className="text-[11px] text-leaf-500">Connecting to n8n intake service</span>
+            </p>
+          </motion.div>
+        ) : scanning ? (
           <motion.div
             key="scanning"
             initial={{ opacity: 0 }}
