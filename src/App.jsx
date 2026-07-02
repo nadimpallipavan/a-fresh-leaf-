@@ -616,7 +616,10 @@ export default function App() {
           {/* Story Right Content */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold font-display bg-gradient-to-r from-white via-leaf-100 to-emerald-400 bg-clip-text text-transparent mt-3 leading-tight pb-1">
+            <h2 
+              className="text-3xl md:text-5xl font-black uppercase bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent mt-3 leading-[0.95] pb-2"
+              style={{ letterSpacing: "-0.06em" }}
+            >
               Digital growth is not accidental. It is engineered.
             </h2>
             <p className="text-leaf-300 mt-6 font-light leading-relaxed text-lg">
