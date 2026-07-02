@@ -21,6 +21,7 @@ import {
 import { Badge } from "./components/ui/badge-2";
 import { Button as TheItemButton } from "./components/ui/the-item-one";
 import { Switch } from "./components/ui/switch";
+import { BorderRotate } from "./components/ui/animated-gradient-border";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -776,11 +777,17 @@ export default function App() {
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Column 1: FMPS */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              whileHover={{ y: -5 }}
+              className="relative overflow-hidden rounded-3xl"
             >
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
+              <BorderRotate
+                borderRadius={24}
+                borderWidth={2}
+                animationSpeed={7}
+                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+              >
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">Fix My Page Speed (FMPS)</h3>
 
                 <div className="mb-6">
@@ -900,15 +907,22 @@ export default function App() {
                   </ItemGroup>
                 )}
               </div>
+              </BorderRotate>
             </motion.div>
 
             {/* Column 2: AFL Web Services */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              whileHover={{ y: -5 }}
+              className="relative overflow-hidden rounded-3xl"
             >
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
+              <BorderRotate
+                borderRadius={24}
+                borderWidth={3}
+                animationSpeed={4}
+                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+              >
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">A Fresh Leaf (AFL) Builds</h3>
 
                 <div className="mb-6">
@@ -1008,15 +1022,22 @@ export default function App() {
                   </ItemGroup>
                 )}
               </div>
+              </BorderRotate>
             </motion.div>
 
             {/* Column 3: AI & System Operations */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              whileHover={{ y: -5 }}
+              className="relative overflow-hidden rounded-3xl"
             >
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
+              <BorderRotate
+                borderRadius={24}
+                borderWidth={2}
+                animationSpeed={7}
+                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+              >
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">Systems & Portals</h3>
 
                 <div className="mb-6">
@@ -1116,6 +1137,7 @@ export default function App() {
                   </ItemGroup>
                 )}
               </div>
+              </BorderRotate>
             </motion.div>
           </div>
         </div>
