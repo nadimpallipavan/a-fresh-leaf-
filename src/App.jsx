@@ -10,7 +10,7 @@ import { Marquee } from "./components/ui/marquee";
 import { Button } from "./components/ui/button";
 import { CardStack } from "./components/ui/card-stack";
 import { TextReveal } from "./components/ui/cascade-text";
-import { InteractiveFolderGallery } from "./components/ui/interactive-folder-gallery";
+import CircularGallery from "./components/ui/circular-flip-card-gallery";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -147,34 +147,54 @@ const mobileNavLinks = [
   }
 ];
 
-const worksPhotos = [
+const circularCardData = [
   { 
-    id: 1, 
     image: "/images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
-    desc: "Local postal & shipping services. Clean, trustworthy design with strong contact flow." 
+    description: "Postal & shipping services with strong contact flow." 
   },
   { 
-    id: 2, 
     image: "/images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
-    desc: "Performance optimization WooCommerce store with service packages." 
+    description: "Performance optimization WooCommerce store." 
   },
   { 
-    id: 3, 
     image: "/images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
-    desc: "Live Boynton Beach Inlet underwater camera feed broadcasting marine life." 
+    description: "Boynton Beach Inlet live underwater camera stream." 
   },
   { 
-    id: 4, 
     image: "/images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
-    desc: "Premium dog training brand. WordPress build with mobile-first design and local SEO." 
+    description: "Premium dog training platform with local SEO." 
+  },
+  { 
+    image: "/images/postalprosplus_logo.png", 
+    title: "PostalProsPlus", 
+    url: "https://postalprosplus.com", 
+    description: "Postal & shipping services with strong contact flow." 
+  },
+  { 
+    image: "/images/fixmypagespeed_logo.png", 
+    title: "FixMyPageSpeed", 
+    url: "https://fixmypagespeed.com", 
+    description: "Performance optimization WooCommerce store." 
+  },
+  { 
+    image: "/images/saltwatercam_logo.png", 
+    title: "SaltwaterCam", 
+    url: "https://saltwatercam.com", 
+    description: "Boynton Beach Inlet live underwater camera stream." 
+  },
+  { 
+    image: "/images/kingstonk9_logo.png", 
+    title: "Kingston K9", 
+    url: "https://kingstonk9.com", 
+    description: "Premium dog training platform with local SEO." 
   }
 ];
 
@@ -985,25 +1005,21 @@ export default function App() {
             <p className="text-leaf-400 mt-4 font-light">Fast, conversion-focused websites and digital systems for businesses across South Florida and beyond.</p>
           </div>
 
-          {/* Interactive Folder Gallery */}
-          <div className="w-full relative flex items-center justify-center">
-            <InteractiveFolderGallery 
-              photos={worksPhotos} 
-              folderName="OurWork.gallery" 
-              dragHintText="Drag logo down to close folder"
-            />
+          {/* Circular Flip Card Gallery */}
+          <div className="w-full relative flex items-center justify-center my-8">
+            <CircularGallery cards={circularCardData} />
           </div>
 
           {/* Quick links to visit live websites */}
           <div className="w-full max-w-4xl mx-auto mt-6 mb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 relative z-30">
-            {worksPhotos.map((work) => (
+            {circularCardData.slice(0, 4).map((work, idx) => (
               <div 
-                key={work.id}
+                key={idx}
                 className="glass p-5 rounded-2xl border border-leaf-900/40 hover:border-leaf-700/60 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <h4 className="font-bold text-white text-base">{work.title}</h4>
-                  <p className="text-xs text-leaf-400 mt-2 leading-relaxed">{work.desc}</p>
+                  <p className="text-xs text-leaf-400 mt-2 leading-relaxed">{work.description}</p>
                 </div>
                 <a 
                   href={work.url}
