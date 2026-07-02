@@ -677,10 +677,11 @@ export default function App() {
           {/* Story Right Content */}
           <div className="w-full lg:col-span-6 order-1 lg:order-2 flex flex-col items-start text-left">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight pb-2">
-              Digital growth is not accidental. It is <span className="text-leaf-400">engineered.</span>
-            </h2>
-            <p className="text-leaf-300 mt-6 font-light leading-relaxed text-lg">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-left">About <span className="text-leaf-400">Us</span></h2>
+            <h3 className="text-lg md:text-xl font-sans font-semibold text-leaf-300 mt-4 leading-normal">
+              Digital growth is not accidental. It is engineered.
+            </h3>
+            <p className="text-leaf-300 mt-4 font-light leading-relaxed text-base">
               Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
             </p>
             <div className="mt-8 space-y-6 w-full">
@@ -738,10 +739,10 @@ export default function App() {
           </div>
 
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Internal Matrix</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-3">AFL + FMPS Pricing <span className="text-leaf-400">Matrix</span></h2>
-            <p className="text-leaf-400 mt-4 font-light">
-              Exact project estimates aligned with current small-business design, technical SEO, and automation market ranges.
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Transparent Cost Structure</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Pricing</span></h2>
+            <p className="text-leaf-400 mt-4 font-light text-center">
+              Simple, value-backed project plans aligned with custom web design, speed upgrades, and CRM automations.
             </p>
           </div>
 
