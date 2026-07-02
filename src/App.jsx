@@ -20,6 +20,7 @@ import {
 } from "./components/ui/item";
 import { Badge } from "./components/ui/badge-2";
 import { Button as TheItemButton } from "./components/ui/the-item-one";
+import { Switch } from "./components/ui/switch";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -253,6 +254,9 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedTimeline, setSelectedTimeline] = useState(0);
   const [currentPage, setCurrentPage] = useState("home");
+  const [showAllFmps, setShowAllFmps] = useState(false);
+  const [showAllAfl, setShowAllAfl] = useState(false);
+  const [showAllSystems, setShowAllSystems] = useState(false);
   
   const [auditUrl, setAuditUrl] = useState("");
   const [auditStatus, setAuditStatus] = useState("idle"); // idle, scanning, success
@@ -777,16 +781,23 @@ export default function App() {
             >
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
-                <h3 className="text-xl font-bold text-white mt-2 mb-6">Fix My Page Speed (FMPS)</h3>
+                <h3 className="text-xl font-bold text-white mt-2 mb-4">Fix My Page Speed (FMPS)</h3>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <Switch checked={showAllFmps} onCheckedChange={setShowAllFmps} />
+                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllFmps ? "text-leaf-500" : "text-leaf-300/60"}`}>
+                    show all prices — {showAllFmps ? "on" : "off"}
+                  </span>
+                </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
                   <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Quick Speed + Trust Snapshot</span>
-                        <span className="text-white font-mono text-sm font-bold">$97</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$97</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Core Web Vitals snapshot. Easy entry offer.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Core Web Vitals snapshot. Easy entry offer.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -797,9 +808,9 @@ export default function App() {
                           Paid Audit + Cleanup Plan
                           <Badge variant="success" size="xs" className="bg-leaf-500/20 text-leaf-300 border border-leaf-500/30 text-[8px] font-sans px-1 rounded">Popular</Badge>
                         </span>
-                        <span className="text-leaf-400 font-mono text-sm font-bold">$297</span>
+                        {showAllFmps && <span className="text-leaf-400 font-mono text-sm font-bold">$297</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Best first offer. Deep diagnostic report.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Best first offer. Deep diagnostic report.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -807,9 +818,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Priority Audit + 30-Min Review</span>
-                        <span className="text-white font-mono text-sm font-bold">$497</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$497</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Deep audit combined with direct strategy call consultation.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Deep audit combined with direct strategy call consultation.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -817,9 +828,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-emerald-300 flex justify-between items-center w-full">
                         <span>Speed + Trust Cleanup Sprint</span>
-                        <span className="text-white font-mono text-sm font-bold">$997</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$997</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Natural upgrade path. Direct asset & code cleanup sprint.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Natural upgrade path. Direct asset & code cleanup sprint.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -827,9 +838,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Premium Cleanup Sprint</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,497</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$1,497</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Full multi-system asset cache structure & database compression.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Full multi-system asset cache structure & database compression.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -837,9 +848,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Emergency Website Rescue Day</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,997</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$1,997</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Immediate 24-hour turnaround performance & server emergency recovery.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Immediate 24-hour turnaround performance & server emergency recovery.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -847,9 +858,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Ongoing Basic Care Plan</span>
-                        <span className="text-white font-mono text-sm font-bold">$197/mo</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$197/mo</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Standard updates, security hardening, and daily rollback backups.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Standard updates, security hardening, and daily rollback backups.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -857,9 +868,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Ongoing Growth Care Plan</span>
-                        <span className="text-white font-mono text-sm font-bold">$397/mo</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$397/mo</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Staging environment sync, Git source control setup, and SEO indexing checks.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Staging environment sync, Git source control setup, and SEO indexing checks.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -867,9 +878,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Premium Website Care Plan</span>
-                        <span className="text-white font-mono text-sm font-bold">$747/mo</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$747/mo</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Continuous staging sync, DevOps rollback pipelines, and speed monitoring.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Continuous staging sync, DevOps rollback pipelines, and speed monitoring.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -877,9 +888,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>White-Glove Support Retainer</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,497/mo</span>
+                        {showAllFmps && <span className="text-white font-mono text-sm font-bold">$1,497/mo</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Dedicated engineer availability and unlimited small site edits.</ItemDescription>
+                      {showAllFmps && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Dedicated engineer availability and unlimited small site edits.</ItemDescription>}
                     </ItemContent>
                   </Item>
                 </ItemGroup>
@@ -893,16 +904,23 @@ export default function App() {
             >
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
-                <h3 className="text-xl font-bold text-white mt-2 mb-6">A Fresh Leaf (AFL) Builds</h3>
+                <h3 className="text-xl font-bold text-white mt-2 mb-4">A Fresh Leaf (AFL) Builds</h3>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <Switch checked={showAllAfl} onCheckedChange={setShowAllAfl} />
+                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllAfl ? "text-leaf-500" : "text-leaf-300/60"}`}>
+                    show all prices — {showAllAfl ? "on" : "off"}
+                  </span>
+                </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
                   <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Basic Landing Page</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,250</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$1,250</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean layout single sales page built directly in React.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean layout single sales page built directly in React.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -910,9 +928,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Premium Landing Page</span>
-                        <span className="text-white font-mono text-sm font-bold">$2,500</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$2,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Advanced copy integration, A/B paths, and custom graphics.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Advanced copy integration, A/B paths, and custom graphics.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -923,9 +941,9 @@ export default function App() {
                           Small Business Website
                           <Badge variant="success" size="xs" className="bg-leaf-500/20 text-leaf-300 border border-leaf-500/30 text-[8px] font-sans px-1 rounded">Popular</Badge>
                         </span>
-                        <span className="text-leaf-400 font-mono text-sm font-bold">$3,500</span>
+                        {showAllAfl && <span className="text-leaf-400 font-mono text-sm font-bold">$3,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Up to 5 pages. Custom brand theme, optimized speed & SEO.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Up to 5 pages. Custom brand theme, optimized speed & SEO.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -933,9 +951,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Growth Website Build</span>
-                        <span className="text-white font-mono text-sm font-bold">$5,500</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$5,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Full multi-page builds featuring advanced lead funnel systems.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Full multi-page builds featuring advanced lead funnel systems.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -943,9 +961,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Premium Website Rebuild</span>
-                        <span className="text-white font-mono text-sm font-bold">$8,500</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$8,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Total corporate redesign, deep structural UX audit & setup.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Total corporate redesign, deep structural UX audit & setup.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -953,9 +971,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Website Rescue Sprint</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,500</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$1,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Repairs for broken formatting, broken styling, and mobile responsiveness bugs.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Repairs for broken formatting, broken styling, and mobile responsiveness bugs.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -963,9 +981,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Brand / UX Polish Sprint</span>
-                        <span className="text-white font-mono text-sm font-bold">$997</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$997</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean visual edits, unified typographies, and layout polish.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean visual edits, unified typographies, and layout polish.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -973,9 +991,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Full Brand + Website Refresh</span>
-                        <span className="text-white font-mono text-sm font-bold">$4,500</span>
+                        {showAllAfl && <span className="text-white font-mono text-sm font-bold">$4,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Complete typography update, new logo integration, and landing rebuilds.</ItemDescription>
+                      {showAllAfl && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Complete typography update, new logo integration, and landing rebuilds.</ItemDescription>}
                     </ItemContent>
                   </Item>
                 </ItemGroup>
@@ -989,16 +1007,23 @@ export default function App() {
             >
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
-                <h3 className="text-xl font-bold text-white mt-2 mb-6">Systems & Portals</h3>
+                <h3 className="text-xl font-bold text-white mt-2 mb-4">Systems & Portals</h3>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <Switch checked={showAllSystems} onCheckedChange={setShowAllSystems} />
+                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllSystems ? "text-leaf-500" : "text-leaf-300/60"}`}>
+                    show all prices — {showAllSystems ? "on" : "off"}
+                  </span>
+                </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
                   <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Simple AI Chat / FAQ Setup</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,500</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$1,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Static business data assistant mapped to front-end chat widget.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Static business data assistant mapped to front-end chat widget.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1006,9 +1031,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Client-Safe AI Assistant</span>
-                        <span className="text-white font-mono text-sm font-bold">$2,500</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$2,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Guardrails-equipped assistant with context-based routing algorithms.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Guardrails-equipped assistant with context-based routing algorithms.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1019,9 +1044,9 @@ export default function App() {
                           Role-Scoped Business Assistant
                           <Badge variant="success" size="xs" className="bg-leaf-500/20 text-leaf-300 border border-leaf-500/30 text-[8px] font-sans px-1 rounded">Popular</Badge>
                         </span>
-                        <span className="text-leaf-400 font-mono text-sm font-bold">$5,500</span>
+                        {showAllSystems && <span className="text-leaf-400 font-mono text-sm font-bold">$5,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Internal workflow agent acting on designated system roles.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-300 mt-1 leading-normal font-light">Internal workflow agent acting on designated system roles.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1029,9 +1054,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Workflow Automation Starter</span>
-                        <span className="text-white font-mono text-sm font-bold">$997</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$997</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Basic webhook setup between forms and Google Sheets/Email.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Basic webhook setup between forms and Google Sheets/Email.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1039,9 +1064,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Business Automation Package</span>
-                        <span className="text-white font-mono text-sm font-bold">$3,500</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$3,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Advanced workflow scripts, data pipelines, and error monitors.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Advanced workflow scripts, data pipelines, and error monitors.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1049,9 +1074,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Client Intake Form / Request Flow</span>
-                        <span className="text-white font-mono text-sm font-bold">$750</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$750</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean customer upload & onboarding data collection forms.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Clean customer upload & onboarding data collection forms.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1059,9 +1084,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>Client Intake + Routing Setup</span>
-                        <span className="text-white font-mono text-sm font-bold">$1,500</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$1,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Forms combined with active notifications and lead sorting.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Forms combined with active notifications and lead sorting.</ItemDescription>}
                     </ItemContent>
                   </Item>
 
@@ -1069,9 +1094,9 @@ export default function App() {
                     <ItemContent className="w-full">
                       <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
                         <span>CRM / Intake Readiness Setup</span>
-                        <span className="text-white font-mono text-sm font-bold">$2,500</span>
+                        {showAllSystems && <span className="text-white font-mono text-sm font-bold">$2,500</span>}
                       </ItemTitle>
-                      <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Integration of lead data pipelines directly to HubSpot, Zoho, etc.</ItemDescription>
+                      {showAllSystems && <ItemDescription className="text-[10px] text-leaf-400 mt-1 leading-normal font-light">Integration of lead data pipelines directly to HubSpot, Zoho, etc.</ItemDescription>}
                     </ItemContent>
                   </Item>
                 </ItemGroup>
