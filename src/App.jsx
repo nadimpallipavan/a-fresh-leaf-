@@ -22,6 +22,7 @@ import { Badge } from "./components/ui/badge-2";
 import { Button as TheItemButton } from "./components/ui/the-item-one";
 import { Switch } from "./components/ui/switch";
 import { BorderRotate } from "./components/ui/animated-gradient-border";
+import { LeadFunnel } from "./components/ui/lead-funnel";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -266,15 +267,7 @@ export default function App() {
   const handleAuditSubmit = (e) => {
     e.preventDefault();
     if (!auditUrl.trim()) return;
-
-    setAuditStatus("scanning");
-    setScanStep(0);
-
-    setTimeout(() => setScanStep(1), 1000);
-    setTimeout(() => setScanStep(2), 2000);
-    setTimeout(() => {
-      setAuditStatus("success");
-    }, 3200);
+    setCurrentPage("contact");
   };
 
   // Mouse move parallax effect for hero
@@ -1170,11 +1163,26 @@ export default function App() {
       </section>
       )}
 
+      {currentPage === "contact" && (
+      <section id="contact-funnel" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">Free Speed & SEO Audit</h2>
+            <p className="text-leaf-400 mt-4 font-light">Complete our quick diagnostic questionnaire to queue your audit report callback with Collin Fraum.</p>
+          </div>
+          <LeadFunnel initialUrl={auditUrl} onComplete={(data) => {
+            console.log("Lead qualification data:", data);
+          }} />
+        </div>
+      </section>
+      )}
+
       {/* 5. ESTIMATE REQUEST / FOOTER */}
       <footer id="estimate" className="relative bg-leaf-950 border-t border-leaf-900/40 pt-24 pb-12 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Estimate Request Box */}
-          {(currentPage === "home" || currentPage === "contact") && (
+          {currentPage === "home" && (
           <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-4xl mx-auto text-center mb-24 relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-leaf-500/5 rounded-full blur-[80px]" />
             
@@ -1184,53 +1192,19 @@ export default function App() {
               We will inspect your site's core web vitals, mobile responsiveness, and keyword indexation. No obligations.
             </p>
 
-            {auditStatus === "idle" && (
-              <form onSubmit={handleAuditSubmit} className="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-                <input 
-                  type="text" 
-                  value={auditUrl}
-                  onChange={(e) => setAuditUrl(e.target.value)}
-                  required
-                  placeholder="Enter your website URL (e.g. mysite.com)" 
-                  className="flex-1 bg-leaf-900/40 border border-leaf-800 rounded-full px-6 py-4 text-white text-sm focus:outline-none focus:border-leaf-500/50"
-                />
-                <button type="submit" className="bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-md">
-                  Request Free Audit
-                </button>
-              </form>
-            )}
-
-            {auditStatus === "scanning" && (
-              <div className="mt-8 max-w-md mx-auto flex flex-col items-center gap-4 py-4">
-                <div className="w-10 h-10 border-4 border-leaf-500/30 border-t-leaf-500 rounded-full animate-spin" />
-                <p className="text-leaf-300 font-mono text-sm animate-pulse">
-                  {scanStep === 0 && "Analyzing mobile Core Web Vitals..."}
-                  {scanStep === 1 && "Optimizing script payload budgets..."}
-                  {scanStep === 2 && "Checking localized SEO indexing..."}
-                </p>
-              </div>
-            )}
-
-            {auditStatus === "success" && (
-              <div className="mt-8 max-w-lg mx-auto p-6 rounded-3xl border border-leaf-500/30 bg-leaf-500/5 flex flex-col items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-leaf-500 flex items-center justify-center text-leaf-950 text-xl font-bold font-sans">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="text-xl font-extrabold text-white">Diagnostics Queued!</h3>
-                  <p className="text-leaf-300 mt-2 text-sm leading-relaxed">
-                    We have successfully registered your request for <strong className="text-white font-mono">{auditUrl}</strong>.
-                    Collin Fraum or one of our lead speed engineers will email your custom report within 24 hours.
-                  </p>
-                </div>
-                <button 
-                  onClick={() => { setAuditStatus("idle"); setAuditUrl(""); }} 
-                  className="text-xs text-leaf-400 hover:text-leaf-300 underline mt-2"
-                >
-                  Run another audit
-                </button>
-              </div>
-            )}
+            <form onSubmit={handleAuditSubmit} className="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+              <input 
+                type="text" 
+                value={auditUrl}
+                onChange={(e) => setAuditUrl(e.target.value)}
+                required
+                placeholder="Enter your website URL (e.g. mysite.com)" 
+                className="flex-1 bg-leaf-900/40 border border-leaf-800 rounded-full px-6 py-4 text-white text-sm focus:outline-none focus:border-leaf-500/50"
+              />
+              <button type="submit" className="bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-md">
+                Request Free Audit
+              </button>
+            </form>
           </div>
           )}
 
