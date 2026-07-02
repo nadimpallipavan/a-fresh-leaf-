@@ -23,6 +23,7 @@ import { Button as TheItemButton } from "./components/ui/the-item-one";
 import { Switch } from "./components/ui/switch";
 import PricingCreative from "./components/ui/demo";
 import PricingSimple from "./components/ui/pricing-blocks";
+import ScrollReelTestimonials from "./components/ui/scroll-reel-testimonials";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -224,6 +225,27 @@ const circularCardData = [
     bgColor: "#ffffff",
     padding: "p-1"
   }
+];
+
+const FOUNDER_TESTIMONIALS = [
+  {
+    quote: "Most agencies build beautiful sites that are slow, or fast sites that are ugly. Collin engineers custom React systems that excel at both.",
+    author: "Jan Dittrich, Tech Lead",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop",
+    alt: "Portrait of Jan Dittrich",
+  },
+  {
+    quote: "Our website page speed went from 43 to 100 on mobile, resulting in a 40% conversion increase inside the first 30 days.",
+    author: "Michael Riddering, E-Commerce Director",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop",
+    alt: "Portrait of Michael Riddering",
+  },
+  {
+    quote: "Collin's direct codebase and SEO audit rescued our rankings and localized search authority when we rebuilt our business funnel.",
+    author: "James Traf, Product Designer",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop",
+    alt: "Portrait of James Traf",
+  },
 ];
 
 const timelineSteps = [
@@ -653,6 +675,15 @@ export default function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Testimonials Block */}
+          <div className="lg:col-span-12 mt-24 flex flex-col items-center w-full">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Client Perspectives</span>
+              <h3 className="text-2xl md:text-3xl font-extrabold font-display text-white mt-2">What they say about Collin</h3>
+            </div>
+            <ScrollReelTestimonials testimonials={FOUNDER_TESTIMONIALS} className="w-full" />
           </div>
         </div>
       </section>
