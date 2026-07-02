@@ -10,6 +10,7 @@ import { Marquee } from "./components/ui/marquee";
 import { Button } from "./components/ui/button";
 import { CardStack } from "./components/ui/card-stack";
 import { TextReveal } from "./components/ui/cascade-text";
+import { CircularGallery } from "./components/ui/circular-gallery";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -143,6 +144,39 @@ const mobileNavLinks = [
     subheading: "Get started with your custom estimate",
     imgSrc: "/images/email_automation_mockup.png",
     href: "#estimate"
+  }
+];
+
+const worksData = [
+  {
+    common: 'Kingston K9',
+    binomial: 'Premium Dog Training — Fort Pierce, FL',
+    photo: {
+      url: '/images/web_design.jpg',
+      text: 'Kingston K9 mobile-first responsive WordPress build',
+      pos: '50% 50%',
+      by: 'A Fresh Leaf'
+    }
+  },
+  {
+    common: 'PostalProsPlus',
+    binomial: 'Courier & Local Shipping Services',
+    photo: {
+      url: '/images/web_design_mockup.jpg',
+      text: 'PostalProsPlus clean and trustworthy web structure',
+      pos: '50% 50%',
+      by: 'A Fresh Leaf'
+    }
+  },
+  {
+    common: 'FixMyPageSpeed',
+    binomial: 'WooCommerce Speed & Diagnostics Sprint',
+    photo: {
+      url: '/images/page_speed_mockup.jpg',
+      text: 'FixMyPageSpeed optimization dashboard interface',
+      pos: '50% 50%',
+      by: 'A Fresh Leaf'
+    }
   }
 ];
 
@@ -944,68 +978,33 @@ export default function App() {
       </section>
       )}
 
-      {/* 4. THE CRAFT / TIMELINE */}
       {currentPage === "work" && (
-      <section id="process" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto">
+      <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Methodology</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">The Growth Process</h2>
-            <p className="text-leaf-400 mt-4 font-light">From site audit to search optimization, we engineer clean steps for transparent growth.</p>
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500 font-sans">Portfolio</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">Our Work</h2>
+            <p className="text-leaf-400 mt-4 font-light">Fast, conversion-focused websites and digital systems for businesses across South Florida and beyond.</p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12">
-            {/* Timeline Left: Nav Links */}
-            <div className="lg:col-span-4 flex flex-col justify-start gap-4">
-              {timelineSteps.map((step, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedTimeline(idx)}
-                  className={`text-left p-6 rounded-2xl border transition-all duration-300 flex flex-col ${
-                    selectedTimeline === idx 
-                      ? 'glass-card border-leaf-500/30' 
-                      : 'bg-transparent border-transparent hover:border-leaf-800 text-leaf-400'
-                  }`}
-                >
-                  <span className="text-xs font-bold uppercase tracking-widest text-leaf-500 mb-1">{step.year}</span>
-                  <span className="text-lg font-bold text-white">{step.title}</span>
-                </button>
-              ))}
-            </div>
+          {/* 3D Circular Portfolio Gallery */}
+          <div className="w-full h-[500px] relative flex items-center justify-center mb-16">
+            <CircularGallery items={worksData} radius={350} autoRotateSpeed={0.06} />
+          </div>
 
-            {/* Timeline Right: Detailed Card */}
-            <div className="lg:col-span-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedTimeline}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                  className="glass p-12 rounded-[32px] border border-leaf-700/20 text-left h-full flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-5xl font-black text-leaf-800 font-display mb-4">
-                      {timelineSteps[selectedTimeline].year.split(' ')[0]}
-                    </div>
-                    <h3 className="text-3xl font-extrabold text-white font-display mb-6">
-                      {timelineSteps[selectedTimeline].title}
-                    </h3>
-                    <p className="text-lg text-leaf-300 font-light leading-relaxed">
-                      {timelineSteps[selectedTimeline].description}
-                    </p>
-                  </div>
-                  
-                  {/* Subtle decorative graphic */}
-                  <div className="mt-12 flex items-center justify-between border-t border-leaf-900/60 pt-6">
-                    <span className="text-xs text-leaf-400 uppercase tracking-widest">Digital Growth Laboratory</span>
-                    <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                      <Logo iconOnly className="w-4.5 h-4.5" />
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          {/* Call To Action Box */}
+          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-3xl" />
+            <h3 className="text-2xl font-extrabold text-white font-display">Ready to build something great?</h3>
+            <p className="text-leaf-300 text-sm font-light mt-3 max-w-md mx-auto">
+              Partner with A Fresh Leaf for bespoke custom-coded web architectures and speed integrations.
+            </p>
+            <button 
+              onClick={() => setCurrentPage("contact")} 
+              className="mt-8 bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-3 rounded-full text-sm transition-all duration-300 shadow-md inline-block animate-pulse"
+            >
+              Start a Project
+            </button>
           </div>
         </div>
       </section>
