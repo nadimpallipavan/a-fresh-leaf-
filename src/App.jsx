@@ -161,7 +161,7 @@ const circularCardData = [
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
-    bgColor: "#111111",
+    bgColor: "#ffffff",
     padding: "p-2.5"
   },
   { 
@@ -193,7 +193,7 @@ const circularCardData = [
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
-    bgColor: "#111111",
+    bgColor: "#ffffff",
     padding: "p-2.5"
   },
   { 

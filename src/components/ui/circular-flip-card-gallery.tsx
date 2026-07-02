@@ -44,7 +44,7 @@ function FlipCard({ image, title, description, url, bgColor, padding, className,
         </div>
         {/* Back side - Title and Link */}
         <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-1.5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <h3 className="font-bold text-[8.5px] md:text-[10px] tracking-tight text-neutral-100 mb-2.5 text-center break-words leading-tight max-w-full px-0.5">{title}</h3>
+          <h3 className="font-bold text-[8px] md:text-[9.5px] tracking-tighter text-neutral-100 mb-2.5 text-center whitespace-nowrap overflow-visible max-w-full px-0.5">{title}</h3>
           {url && (
             <a 
               href={url}
