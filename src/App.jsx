@@ -10,7 +10,7 @@ import { Marquee } from "./components/ui/marquee";
 import { Button } from "./components/ui/button";
 import { CardStack } from "./components/ui/card-stack";
 import { TextReveal } from "./components/ui/cascade-text";
-import { CircularGallery } from "./components/ui/circular-gallery";
+import { InteractiveFolderGallery } from "./components/ui/interactive-folder-gallery";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -147,50 +147,34 @@ const mobileNavLinks = [
   }
 ];
 
-const worksData = [
-  {
-    common: 'PostalProsPlus',
-    binomial: 'Local Shipping & Postal Services',
-    href: 'https://postalprosplus.com',
-    photo: {
-      url: '/images/postalprosplus_logo.png',
-      text: 'PostalProsPlus logo',
-      pos: '50% 50%',
-      by: 'A Fresh Leaf'
-    }
+const worksPhotos = [
+  { 
+    id: 1, 
+    image: "/images/postalprosplus_logo.png", 
+    title: "PostalProsPlus", 
+    url: "https://postalprosplus.com", 
+    desc: "Local postal & shipping services. Clean, trustworthy design with strong contact flow." 
   },
-  {
-    common: 'FixMyPageSpeed',
-    binomial: 'Performance & SEO Diagnostics',
-    href: 'https://fixmypagespeed.com',
-    photo: {
-      url: '/images/fixmypagespeed_logo.png',
-      text: 'FixMyPageSpeed logo',
-      pos: '50% 50%',
-      by: 'A Fresh Leaf'
-    }
+  { 
+    id: 2, 
+    image: "/images/fixmypagespeed_logo.png", 
+    title: "FixMyPageSpeed", 
+    url: "https://fixmypagespeed.com", 
+    desc: "Performance optimization WooCommerce store with service packages." 
   },
-  {
-    common: 'SaltwaterCam',
-    binomial: 'Boynton Inlet Underwater Live Stream',
-    href: 'https://saltwatercam.com',
-    photo: {
-      url: '/images/saltwatercam_logo.png',
-      text: 'SaltwaterCam logo',
-      pos: '50% 50%',
-      by: 'A Fresh Leaf'
-    }
+  { 
+    id: 3, 
+    image: "/images/saltwatercam_logo.png", 
+    title: "SaltwaterCam", 
+    url: "https://saltwatercam.com", 
+    desc: "Live Boynton Beach Inlet underwater camera feed broadcasting marine life." 
   },
-  {
-    common: 'Kingston K9',
-    binomial: 'Premium Dog Training — Fort Pierce, FL',
-    href: 'https://kingstonk9.com',
-    photo: {
-      url: '/images/kingstonk9_logo.png',
-      text: 'Kingston K9 logo',
-      pos: '50% 50%',
-      by: 'A Fresh Leaf'
-    }
+  { 
+    id: 4, 
+    image: "/images/kingstonk9_logo.png", 
+    title: "Kingston K9", 
+    url: "https://kingstonk9.com", 
+    desc: "Premium dog training brand. WordPress build with mobile-first design and local SEO." 
   }
 ];
 
@@ -1001,9 +985,36 @@ export default function App() {
             <p className="text-leaf-400 mt-4 font-light">Fast, conversion-focused websites and digital systems for businesses across South Florida and beyond.</p>
           </div>
 
-          {/* 3D Circular Portfolio Gallery */}
-          <div className="w-full h-[500px] relative flex items-center justify-center mb-16">
-            <CircularGallery items={worksData} radius={350} autoRotateSpeed={0.06} />
+          {/* Interactive Folder Gallery */}
+          <div className="w-full relative flex items-center justify-center">
+            <InteractiveFolderGallery 
+              photos={worksPhotos} 
+              folderName="OurWork.gallery" 
+              dragHintText="Drag logo down to close folder"
+            />
+          </div>
+
+          {/* Quick links to visit live websites */}
+          <div className="w-full max-w-4xl mx-auto mt-6 mb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 relative z-30">
+            {worksPhotos.map((work) => (
+              <div 
+                key={work.id}
+                className="glass p-5 rounded-2xl border border-leaf-900/40 hover:border-leaf-700/60 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <h4 className="font-bold text-white text-base">{work.title}</h4>
+                  <p className="text-xs text-leaf-400 mt-2 leading-relaxed">{work.desc}</p>
+                </div>
+                <a 
+                  href={work.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-xs font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-widest flex items-center gap-1 transition-colors"
+                >
+                  Visit Site →
+                </a>
+              </div>
+            ))}
           </div>
 
           {/* Call To Action Box */}
