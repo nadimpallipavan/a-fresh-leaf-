@@ -783,11 +783,14 @@ export default function App() {
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">Fix My Page Speed (FMPS)</h3>
 
-                <div className="flex items-center gap-3 mb-6">
-                  <Switch checked={showAllFmps} onCheckedChange={setShowAllFmps} />
-                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllFmps ? "text-leaf-500" : "text-leaf-300/60"}`}>
-                    show all prices — {showAllFmps ? "on" : "off"}
-                  </span>
+                <div className="mb-6">
+                  <TheItemButton 
+                    variant={showAllFmps ? "default" : "outline"} 
+                    className={`w-full py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase border border-leaf-500/20 transition-all duration-300 ${showAllFmps ? "bg-leaf-500 hover:bg-leaf-600 text-leaf-950" : "bg-neutral-900/40 hover:bg-leaf-500 hover:text-leaf-950 text-leaf-300"}`}
+                    onClick={() => setShowAllFmps(!showAllFmps)}
+                  >
+                    {showAllFmps ? "Hide Prices & Details" : "Show Prices & Details"}
+                  </TheItemButton>
                 </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
@@ -906,11 +909,14 @@ export default function App() {
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">A Fresh Leaf (AFL) Builds</h3>
 
-                <div className="flex items-center gap-3 mb-6">
-                  <Switch checked={showAllAfl} onCheckedChange={setShowAllAfl} />
-                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllAfl ? "text-leaf-500" : "text-leaf-300/60"}`}>
-                    show all prices — {showAllAfl ? "on" : "off"}
-                  </span>
+                <div className="mb-6">
+                  <TheItemButton 
+                    variant={showAllAfl ? "default" : "outline"} 
+                    className={`w-full py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase border border-leaf-500/20 transition-all duration-300 ${showAllAfl ? "bg-leaf-500 hover:bg-leaf-600 text-leaf-950" : "bg-neutral-900/40 hover:bg-leaf-500 hover:text-leaf-950 text-leaf-300"}`}
+                    onClick={() => setShowAllAfl(!showAllAfl)}
+                  >
+                    {showAllAfl ? "Hide Prices & Details" : "Show Prices & Details"}
+                  </TheItemButton>
                 </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
@@ -1009,11 +1015,14 @@ export default function App() {
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">Systems & Portals</h3>
 
-                <div className="flex items-center gap-3 mb-6">
-                  <Switch checked={showAllSystems} onCheckedChange={setShowAllSystems} />
-                  <span className={`text-[12px] font-sans font-medium transition-colors duration-300 ${showAllSystems ? "text-leaf-500" : "text-leaf-300/60"}`}>
-                    show all prices — {showAllSystems ? "on" : "off"}
-                  </span>
+                <div className="mb-6">
+                  <TheItemButton 
+                    variant={showAllSystems ? "default" : "outline"} 
+                    className={`w-full py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase border border-leaf-500/20 transition-all duration-300 ${showAllSystems ? "bg-leaf-500 hover:bg-leaf-600 text-leaf-950" : "bg-neutral-900/40 hover:bg-leaf-500 hover:text-leaf-950 text-leaf-300"}`}
+                    onClick={() => setShowAllSystems(!showAllSystems)}
+                  >
+                    {showAllSystems ? "Hide Prices & Details" : "Show Prices & Details"}
+                  </TheItemButton>
                 </div>
                 
                 <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
