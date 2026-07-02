@@ -264,10 +264,22 @@ export default function App() {
   const [auditStatus, setAuditStatus] = useState("idle"); // idle, scanning, success
   const [scanStep, setScanStep] = useState(0);
 
+  const handleNavClick = (e, page, elementId) => {
+    if (e) e.preventDefault();
+    setCurrentPage(page);
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 50);
+  };
+
   const handleAuditSubmit = (e) => {
     e.preventDefault();
     if (!auditUrl.trim()) return;
-    setCurrentPage("contact");
+    handleNavClick(e, "contact", "contact-funnel");
   };
 
   // Mouse move parallax effect for hero
@@ -302,8 +314,9 @@ export default function App() {
           </a>
 
           {/* Desktop Navigation */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2 lg:gap-4">
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage("home"); }} className="relative inline-block group">
+            <a href="#" onClick={(e) => handleNavClick(e, "home", "home-hero")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "home" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 Home
               </span>
@@ -311,7 +324,7 @@ export default function App() {
               <span className={`absolute inset-0 bg-leaf-500 transform transition-all duration-300 origin-top ${currentPage === "home" ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}`} />
             </a>
             
-            <a href="#services" onClick={(e) => { e.preventDefault(); setCurrentPage("services"); }} className="relative inline-block group">
+            <a href="#services" onClick={(e) => handleNavClick(e, "services", "services")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "services" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 Services
               </span>
@@ -319,7 +332,7 @@ export default function App() {
               <span className={`absolute inset-0 bg-leaf-500 transform transition-all duration-300 origin-top ${currentPage === "services" ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}`} />
             </a>
 
-            <a href="#work" onClick={(e) => { e.preventDefault(); setCurrentPage("work"); }} className="relative inline-block group">
+            <a href="#work" onClick={(e) => handleNavClick(e, "work", "work")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "work" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 Our Work
               </span>
@@ -327,7 +340,7 @@ export default function App() {
               <span className={`absolute inset-0 bg-leaf-500 transform transition-all duration-300 origin-top ${currentPage === "work" ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}`} />
             </a>
 
-            <a href="#story" onClick={(e) => { e.preventDefault(); setCurrentPage("about"); }} className="relative inline-block group">
+            <a href="#story" onClick={(e) => handleNavClick(e, "about", "story")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "about" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 About
               </span>
@@ -335,7 +348,7 @@ export default function App() {
               <span className={`absolute inset-0 bg-leaf-500 transform transition-all duration-300 origin-top ${currentPage === "about" ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}`} />
             </a>
 
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentPage("pricing"); }} className="relative inline-block group">
+            <a href="#pricing" onClick={(e) => handleNavClick(e, "pricing", "pricing")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "pricing" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 Pricing
               </span>
@@ -343,7 +356,7 @@ export default function App() {
               <span className={`absolute inset-0 bg-leaf-500 transform transition-all duration-300 origin-top ${currentPage === "pricing" ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}`} />
             </a>
 
-            <a href="#estimate" onClick={(e) => { e.preventDefault(); setCurrentPage("contact"); }} className="relative inline-block group">
+            <a href="#estimate" onClick={(e) => handleNavClick(e, "contact", "contact-funnel")} className="relative inline-block group">
               <span className={`relative z-10 block uppercase font-sans font-semibold transition-colors duration-300 text-[11px] py-1.5 px-3 ${currentPage === "contact" ? "text-leaf-950" : "text-leaf-300 group-hover:text-leaf-950"}`}>
                 Contact
               </span>
@@ -414,12 +427,14 @@ export default function App() {
                 onLinkClick={(e, href) => {
                   e.preventDefault();
                   setMobileMenuOpen(false);
-                  if (href === "#") setCurrentPage("home");
-                  else if (href === "#services") setCurrentPage("services");
-                  else if (href === "#work") setCurrentPage("work");
-                  else if (href === "#story") setCurrentPage("about");
-                  else if (href === "#pricing") setCurrentPage("pricing");
-                  else if (href === "#estimate") setCurrentPage("contact");
+                  let targetId = "home-hero";
+                  let page = "home";
+                  if (href === "#services") { targetId = "services"; page = "services"; }
+                  else if (href === "#work") { targetId = "work"; page = "work"; }
+                  else if (href === "#story") { targetId = "story"; page = "about"; }
+                  else if (href === "#pricing") { targetId = "pricing"; page = "pricing"; }
+                  else if (href === "#estimate") { targetId = "contact-funnel"; page = "contact"; }
+                  handleNavClick(e, page, targetId);
                 }} 
                 className="w-full"
               />
@@ -429,8 +444,8 @@ export default function App() {
       </AnimatePresence>
 
       {/* 1. HERO SECTION */}
-      {currentPage === "home" && (
       <section 
+        id="home-hero"
         ref={heroRef}
         onMouseMove={handleMouseMove}
         className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden px-6 lg:px-12"
@@ -519,10 +534,8 @@ export default function App() {
           </div>
         </div>
       </section>
-      )}
 
       {/* Services Marquee Banner under Hero */}
-      {currentPage === "home" && (
       <section className="w-full bg-leaf-950/60 border-y border-leaf-900/40 py-6 backdrop-blur-md relative z-10 flex flex-col items-center gap-3">
         <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-leaf-500 font-sans select-none">
           Our Services
@@ -585,10 +598,8 @@ export default function App() {
           </div>
         </Marquee>
       </section>
-      )}
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      {currentPage === "about" && (
       <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
           {/* Story Left Media */}
@@ -645,11 +656,8 @@ export default function App() {
           </div>
         </div>
       </section>
-      )}
-
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      {currentPage === "services" && (
       <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
@@ -743,10 +751,8 @@ export default function App() {
           </div>
         </div>
       </section>
-      )}
 
       {/* Managed WordPress Hosting Sub-Section */}
-      {currentPage === "pricing" && (
       <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
           {/* Internal Preview Banner */}
@@ -1152,13 +1158,12 @@ export default function App() {
           </div>
         </div>
       </section>
-      )}
 
-      {currentPage === "work" && (
+      {/* 4. OUR WORK SECTION */}
       <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           {/* Circular Flip Card Gallery */}
-          <div className="w-full relative flex items-center justify-center my-8">
+          <div className="w-full relative flex items-center justify-center my-16 py-12 md:my-20">
             <CircularGallery cards={circularCardData} />
           </div>
 
@@ -1170,7 +1175,7 @@ export default function App() {
               Partner with A Fresh Leaf for bespoke custom-coded web architectures and speed integrations.
             </p>
             <button 
-              onClick={() => setCurrentPage("contact")} 
+              onClick={(e) => handleNavClick(e, "contact", "contact-funnel")} 
               className="mt-8 bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-3 rounded-full text-sm transition-all duration-300 shadow-md inline-block animate-pulse"
             >
               Start a Project
@@ -1178,9 +1183,8 @@ export default function App() {
           </div>
         </div>
       </section>
-      )}
 
-      {currentPage === "contact" && (
+      {/* 5. CONTACT FUNNEL SECTION */}
       <section id="contact-funnel" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -1193,13 +1197,11 @@ export default function App() {
           }} />
         </div>
       </section>
-      )}
 
       {/* 5. ESTIMATE REQUEST / FOOTER */}
       <footer id="estimate" className="relative bg-leaf-950 border-t border-leaf-900/40 pt-24 pb-12 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Estimate Request Box */}
-          {currentPage === "home" && (
           <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-4xl mx-auto text-center mb-24 relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-leaf-500/5 rounded-full blur-[80px]" />
             
@@ -1223,7 +1225,6 @@ export default function App() {
               </button>
             </form>
           </div>
-          )}
 
           {/* Links & Brand footer */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left">
