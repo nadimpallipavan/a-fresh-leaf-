@@ -999,42 +999,13 @@ export default function App() {
       {currentPage === "work" && (
       <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500 font-sans">Portfolio</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3">Our Work</h2>
-            <p className="text-leaf-400 mt-4 font-light">Fast, conversion-focused websites and digital systems for businesses across South Florida and beyond.</p>
-          </div>
-
           {/* Circular Flip Card Gallery */}
           <div className="w-full relative flex items-center justify-center my-8">
             <CircularGallery cards={circularCardData} />
           </div>
 
-          {/* Quick links to visit live websites */}
-          <div className="w-full max-w-4xl mx-auto mt-6 mb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 relative z-30">
-            {circularCardData.slice(0, 4).map((work, idx) => (
-              <div 
-                key={idx}
-                className="glass p-5 rounded-2xl border border-leaf-900/40 hover:border-leaf-700/60 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 className="font-bold text-white text-base">{work.title}</h4>
-                  <p className="text-xs text-leaf-400 mt-2 leading-relaxed">{work.description}</p>
-                </div>
-                <a 
-                  href={work.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 text-xs font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-widest flex items-center gap-1 transition-colors"
-                >
-                  Visit Site →
-                </a>
-              </div>
-            ))}
-          </div>
-
           {/* Call To Action Box */}
-          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12">
+          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12 animate-fade-in-up">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-3xl" />
             <h3 className="text-2xl font-extrabold text-white font-display">Ready to build something great?</h3>
             <p className="text-leaf-300 text-sm font-light mt-3 max-w-md mx-auto">

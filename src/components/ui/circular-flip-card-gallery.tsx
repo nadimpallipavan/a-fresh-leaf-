@@ -27,23 +27,22 @@ function FlipCard({ image, title, description, url, className, style }: FlipCard
     >
       <div className="relative w-full h-full rounded-xl shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front side - Logo Image */}
-        <div className="absolute inset-0 rounded-xl bg-[#111111] border border-neutral-800 flex items-center justify-center p-4 [backface-visibility:hidden]">
+        <div className="absolute inset-0 rounded-xl bg-white border border-neutral-200 flex items-center justify-center p-3 [backface-visibility:hidden]">
           <img
             src={image || "/placeholder.svg"}
             alt={title}
             className="max-w-full max-h-full object-contain pointer-events-none select-none"
           />
         </div>
-        {/* Back side - Title, Description, and Link */}
-        <div className="absolute inset-0 rounded-xl bg-neutral-900 border border-neutral-700 flex flex-col items-center justify-center p-3 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <h3 className="font-bold text-xs md:text-sm text-neutral-100 mb-1 text-balance">{title}</h3>
-          <p className="text-[9px] md:text-[10px] text-neutral-400 text-pretty leading-snug mb-3">{description}</p>
+        {/* Back side - Title and Link */}
+        <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-3 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <h3 className="font-bold text-xs md:text-sm text-neutral-100 mb-3 text-balance leading-tight">{title}</h3>
           {url && (
             <a 
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-widest pointer-events-auto"
+              className="text-[9px] md:text-[10px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-wider pointer-events-auto border border-leaf-500/20 px-2 py-1 rounded-full bg-neutral-900/80 hover:bg-neutral-900 transition-colors"
             >
               Visit Site →
             </a>
