@@ -13,11 +13,12 @@ interface FlipCardProps {
   description: string
   url?: string
   bgColor?: string
+  padding?: string
   className?: string
   style?: React.CSSProperties
 }
 
-function FlipCard({ image, title, description, url, bgColor, className, style }: FlipCardProps) {
+function FlipCard({ image, title, description, url, bgColor, padding, className, style }: FlipCardProps) {
   return (
     <div
       className={cn(
@@ -29,7 +30,10 @@ function FlipCard({ image, title, description, url, bgColor, className, style }:
       <div className="relative w-full h-full rounded-xl shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front side - Logo Image */}
         <div 
-          className="absolute inset-0 rounded-xl border border-neutral-800 flex items-center justify-center p-3.5 [backface-visibility:hidden]"
+          className={cn(
+            "absolute inset-0 rounded-xl border border-neutral-800 flex items-center justify-center [backface-visibility:hidden]",
+            padding || "p-3.5"
+          )}
           style={{ backgroundColor: bgColor || "#ffffff" }}
         >
           <img
@@ -40,7 +44,7 @@ function FlipCard({ image, title, description, url, bgColor, className, style }:
         </div>
         {/* Back side - Title and Link */}
         <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-1.5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <h3 className="font-bold text-[9px] md:text-[10px] text-neutral-100 mb-2 text-center break-all leading-tight max-w-full px-0.5">{title}</h3>
+          <h3 className="font-bold text-[8.5px] md:text-[10px] tracking-tight text-neutral-100 mb-2.5 text-center break-words leading-tight max-w-full px-0.5">{title}</h3>
           {url && (
             <a 
               href={url}
@@ -64,6 +68,7 @@ interface CircularGalleryProps {
     description: string
     url: string
     bgColor?: string
+    padding?: string
   }[]
 }
 
@@ -113,10 +118,10 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     >
       {/* Central text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
-        <h3 className="text-xl md:text-2xl font-black text-white text-center tracking-wider leading-none mb-0.5 font-display">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center tracking-wider leading-none mb-1 font-display">
           Our Work
         </h3>
-        <p className="text-[8px] md:text-[9px] text-leaf-500 uppercase tracking-widest font-semibold mt-0.5">
+        <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-1">
           Hover to Flip
         </p>
       </div>

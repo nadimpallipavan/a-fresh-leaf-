@@ -153,56 +153,64 @@ const circularCardData = [
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
-    bgColor: "#111111"
+    bgColor: "#111111",
+    padding: "p-2.5"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
-    bgColor: "#111111"
+    bgColor: "#111111",
+    padding: "p-2.5"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
     description: "Boynton Beach Inlet live underwater camera stream.",
-    bgColor: "#09141f"
+    bgColor: "#09141f",
+    padding: "p-0"
   },
   { 
     image: "/images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
-    bgColor: "#ffffff"
+    bgColor: "#ffffff",
+    padding: "p-2"
   },
   { 
     image: "/images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
-    bgColor: "#111111"
+    bgColor: "#111111",
+    padding: "p-2.5"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
-    bgColor: "#111111"
+    bgColor: "#111111",
+    padding: "p-2.5"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
     description: "Boynton Beach Inlet live underwater camera stream.",
-    bgColor: "#09141f"
+    bgColor: "#09141f",
+    padding: "p-0"
   },
   { 
     image: "/images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
-    bgColor: "#ffffff"
+    bgColor: "#ffffff",
+    padding: "p-2"
   }
 ];
 
