@@ -149,31 +149,45 @@ const mobileNavLinks = [
 
 const worksData = [
   {
-    common: 'Kingston K9',
-    binomial: 'Premium Dog Training — Fort Pierce, FL',
-    photo: {
-      url: '/images/web_design.jpg',
-      text: 'Kingston K9 mobile-first responsive WordPress build',
-      pos: '50% 50%',
-      by: 'A Fresh Leaf'
-    }
-  },
-  {
     common: 'PostalProsPlus',
-    binomial: 'Courier & Local Shipping Services',
+    binomial: 'Local Shipping & Postal Services',
+    href: 'https://postalprosplus.com',
     photo: {
-      url: '/images/web_design_mockup.jpg',
-      text: 'PostalProsPlus clean and trustworthy web structure',
+      url: '/images/postalprosplus_logo.png',
+      text: 'PostalProsPlus logo',
       pos: '50% 50%',
       by: 'A Fresh Leaf'
     }
   },
   {
     common: 'FixMyPageSpeed',
-    binomial: 'WooCommerce Speed & Diagnostics Sprint',
+    binomial: 'Performance & SEO Diagnostics',
+    href: 'https://fixmypagespeed.com',
     photo: {
-      url: '/images/page_speed_mockup.jpg',
-      text: 'FixMyPageSpeed optimization dashboard interface',
+      url: '/images/fixmypagespeed_logo.png',
+      text: 'FixMyPageSpeed logo',
+      pos: '50% 50%',
+      by: 'A Fresh Leaf'
+    }
+  },
+  {
+    common: 'SaltwaterCam',
+    binomial: 'Boynton Inlet Underwater Live Stream',
+    href: 'https://saltwatercam.com',
+    photo: {
+      url: '/images/saltwatercam_logo.png',
+      text: 'SaltwaterCam logo',
+      pos: '50% 50%',
+      by: 'A Fresh Leaf'
+    }
+  },
+  {
+    common: 'Kingston K9',
+    binomial: 'Premium Dog Training — Fort Pierce, FL',
+    href: 'https://kingstonk9.com',
+    photo: {
+      url: '/images/kingstonk9_logo.png',
+      text: 'Kingston K9 logo',
       pos: '50% 50%',
       by: 'A Fresh Leaf'
     }

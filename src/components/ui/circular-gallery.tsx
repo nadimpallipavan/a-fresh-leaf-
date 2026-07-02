@@ -9,6 +9,7 @@ const cn = (...classes: (string | undefined | null | false)[]) => {
 export interface GalleryItem {
   common: string;
   binomial: string;
+  href?: string;
   photo: {
     url: string; 
     text: string;
@@ -127,10 +128,19 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
                   {/* Replaced text-primary-foreground with text-white for consistent color */}
-                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white z-20">
                     <h2 className="text-xl font-bold">{item.common}</h2>
-                    <em className="text-sm italic opacity-80">{item.binomial}</em>
-                    <p className="text-xs mt-2 opacity-70">Photo by: {item.photo.by}</p>
+                    <em className="text-sm italic opacity-80 block">{item.binomial}</em>
+                    {item.href && (
+                      <a 
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 text-xs font-bold uppercase tracking-wider bg-leaf-500 hover:bg-leaf-400 text-leaf-950 px-3 py-1.5 rounded-full transition-all duration-300 relative z-30 pointer-events-auto"
+                      >
+                        Visit Site →
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
