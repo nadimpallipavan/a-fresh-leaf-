@@ -755,6 +755,26 @@ export default function App() {
               ⚠️ OWNER REVIEW PRICING BOARD — DRAFT PREVIEW ONLY (NOT PUBLIC)
             </span>
           </div>
+          {/* July 4th Special Content Banner */}
+          <div className="relative overflow-hidden rounded-[32px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-6 md:p-8 mb-12 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
+            <div className="absolute top-0 left-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase mb-4 font-mono">
+              🇺🇸 Independence Day Special
+            </span>
+            <h3 className="text-xl md:text-2xl font-extrabold text-white font-display">July 4th Celebration Sale — 25% Off</h3>
+            <p className="text-leaf-300 text-xs md:text-sm mt-3 font-light max-w-2xl mx-auto leading-relaxed">
+              Accelerate your local business growth. Get **25% off** all custom website rebuilds, speed optimizations, and automation workflow setup packages ordered by July 7th.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <span className="text-xs font-mono text-leaf-400">Use promo code: <strong className="text-white bg-leaf-900 border border-leaf-800 px-2.5 py-1 rounded text-sm font-bold tracking-wide">AFL4TH25</strong></span>
+              <button 
+                onClick={() => setCurrentPage("contact")} 
+                className="bg-emerald-500 hover:bg-emerald-600 text-neutral-950 font-bold px-6 py-2 rounded-full text-[11px] uppercase tracking-wider transition-all duration-300 shadow-md"
+              >
+                Claim 25% Offer
+              </button>
+            </div>
+          </div>
 
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Internal Matrix</span>
@@ -1235,6 +1255,10 @@ export default function App() {
             </div>
             <div>
               <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-6">Connect</h4>
+              <ul className="space-y-3 text-xs text-leaf-400 mb-6">
+                <li>Email: <a href="mailto:collin@afreshleaf.com" className="hover:text-leaf-300 transition-colors">collin@afreshleaf.com</a></li>
+                <li>Location: Boynton Beach, FL</li>
+              </ul>
               <div className="flex gap-4">
                 <a href="#" className="p-3 rounded-full bg-leaf-900/60 border border-leaf-800 text-leaf-400 hover:text-white transition-colors" aria-label="Instagram">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -1249,9 +1273,9 @@ export default function App() {
               </div>
             </div>
           </div>
-
+ 
           <div className="border-t border-leaf-900/40 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-leaf-400">
-            <span>&copy; {new Date().getFullYear()} FreshLeaf. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} A Fresh Leaf. All rights reserved.</span>
             <div className="flex gap-6">
               <a href="#" className="hover:text-leaf-300 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-leaf-300 transition-colors">Terms of Service</a>
