@@ -152,49 +152,57 @@ const circularCardData = [
     image: "/images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
-    description: "Postal & shipping services with strong contact flow." 
+    description: "Postal & shipping services with strong contact flow.",
+    bgColor: "#ffffff"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
-    description: "Performance optimization WooCommerce store." 
+    description: "Performance optimization WooCommerce store.",
+    bgColor: "#111111"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
-    description: "Boynton Beach Inlet live underwater camera stream." 
+    description: "Boynton Beach Inlet live underwater camera stream.",
+    bgColor: "#09141f"
   },
   { 
     image: "/images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
-    description: "Premium dog training platform with local SEO." 
+    description: "Premium dog training platform with local SEO.",
+    bgColor: "#ffffff"
   },
   { 
     image: "/images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
-    description: "Postal & shipping services with strong contact flow." 
+    description: "Postal & shipping services with strong contact flow.",
+    bgColor: "#ffffff"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
-    description: "Performance optimization WooCommerce store." 
+    description: "Performance optimization WooCommerce store.",
+    bgColor: "#111111"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
-    description: "Boynton Beach Inlet live underwater camera stream." 
+    description: "Boynton Beach Inlet live underwater camera stream.",
+    bgColor: "#09141f"
   },
   { 
     image: "/images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
-    description: "Premium dog training platform with local SEO." 
+    description: "Premium dog training platform with local SEO.",
+    bgColor: "#ffffff"
   }
 ];
 

@@ -12,11 +12,12 @@ interface FlipCardProps {
   title: string
   description: string
   url?: string
+  bgColor?: string
   className?: string
   style?: React.CSSProperties
 }
 
-function FlipCard({ image, title, description, url, className, style }: FlipCardProps) {
+function FlipCard({ image, title, description, url, bgColor, className, style }: FlipCardProps) {
   return (
     <div
       className={cn(
@@ -27,7 +28,10 @@ function FlipCard({ image, title, description, url, className, style }: FlipCard
     >
       <div className="relative w-full h-full rounded-xl shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front side - Logo Image */}
-        <div className="absolute inset-0 rounded-xl bg-white border border-neutral-200 flex items-center justify-center p-3 [backface-visibility:hidden]">
+        <div 
+          className="absolute inset-0 rounded-xl border border-neutral-800 flex items-center justify-center p-3.5 [backface-visibility:hidden]"
+          style={{ backgroundColor: bgColor || "#ffffff" }}
+        >
           <img
             src={image || "/placeholder.svg"}
             alt={title}
@@ -35,14 +39,14 @@ function FlipCard({ image, title, description, url, className, style }: FlipCard
           />
         </div>
         {/* Back side - Title and Link */}
-        <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-3 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <h3 className="font-bold text-xs md:text-sm text-neutral-100 mb-3 text-balance leading-tight">{title}</h3>
+        <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-2 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <h3 className="font-bold text-[10px] md:text-xs text-neutral-100 mb-2.5 text-balance leading-tight">{title}</h3>
           {url && (
             <a 
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] md:text-[10px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-wider pointer-events-auto border border-leaf-500/20 px-2 py-1 rounded-full bg-neutral-900/80 hover:bg-neutral-900 transition-colors"
+              className="text-[8px] md:text-[9px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-wider pointer-events-auto border border-leaf-500/20 px-2 py-0.5 rounded-full bg-neutral-900/80 hover:bg-neutral-900 transition-colors"
             >
               Visit Site →
             </a>
@@ -59,6 +63,7 @@ interface CircularGalleryProps {
     title: string
     description: string
     url: string
+    bgColor?: string
   }[]
 }
 
@@ -97,7 +102,7 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     return () => cancelAnimationFrame(animationFrameId)
   }, [])
 
-  const radius = size * 0.38 // 38% of the container size
+  const radius = size * 0.44 // 44% of the container size (pushes cards outward to prevent central text overlap)
   const centerX = size / 2
   const centerY = size / 2
 
@@ -108,10 +113,10 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     >
       {/* Central text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
-        <h3 className="text-3xl md:text-5xl font-black text-white text-center tracking-tight leading-none mb-1 font-display">
+        <h3 className="text-xl md:text-2xl font-black text-white text-center tracking-wider leading-none mb-0.5 font-display">
           Our Work
         </h3>
-        <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-1">
+        <p className="text-[8px] md:text-[9px] text-leaf-500 uppercase tracking-widest font-semibold mt-0.5">
           Hover to Flip
         </p>
       </div>
