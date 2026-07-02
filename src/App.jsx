@@ -593,13 +593,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
           {/* Story Left Media */}
           <div className="lg:col-span-6 relative">
-            <div className="aspect-[4/5] rounded-[40px] overflow-hidden border border-leaf-800 relative">
-              <img 
-                src="/images/about_hero.jpg" 
-                alt="Digital growth and web engineering" 
-                className="w-full h-full object-cover filter contrast-125"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-leaf-950 via-transparent to-transparent" />
+            <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
+              <Logo iconOnly className="w-48 h-48 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.15)]" />
             </div>
             {/* Absolute Glass Card overlay */}
             <div className="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-leaf-500/20 max-w-xs shadow-2xl">
