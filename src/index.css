@@ -93,3 +93,16 @@ h1, h2, h3 {
 ::-webkit-scrollbar-thumb:hover {
   background: #4eba6f;
 }
+
+@theme inline {
+  --color-destructive-foreground: oklch(1 0 0);
+  --color-color-destructive-foreground: var(----color-destructive-foreground);
+}
+
+:root {
+  --destructive-foreground: oklch(1 0 0);
+}
+
+.dark {
+  --destructive-foreground: oklch(1 0 0);
+}
