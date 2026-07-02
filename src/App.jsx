@@ -21,6 +21,8 @@ import {
 import { Badge } from "./components/ui/badge-2";
 import { Button as TheItemButton } from "./components/ui/the-item-one";
 import { Switch } from "./components/ui/switch";
+import PricingCreative from "./components/ui/demo";
+import PricingSimple from "./components/ui/pricing-blocks";
 import { cn } from "./lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -758,6 +760,20 @@ export default function App() {
       {currentPage === "pricing" && (
       <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
+          {/* Public Creative Packages Section */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Public Packages</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">Simple, Transparent Pricing</h2>
+            <p className="text-leaf-400 mt-4 font-light">
+              Choose the perfect plan for your business growth. Scale or cancel at any time.
+            </p>
+          </div>
+
+          <PricingCreative />
+
+          {/* Spacer / Separator */}
+          <div className="my-20 border-t border-leaf-900/30 max-w-5xl mx-auto" />
+
           {/* Internal Preview Banner */}
           <div className="glass border border-yellow-500/30 bg-yellow-500/5 px-6 py-4 rounded-2xl mb-12 text-center max-w-4xl mx-auto">
             <span className="text-xs font-bold font-mono tracking-widest text-yellow-500 uppercase flex items-center justify-center gap-2">
