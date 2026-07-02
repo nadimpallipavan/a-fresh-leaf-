@@ -784,7 +784,7 @@ export default function App() {
                 borderRadius={24}
                 borderWidth={2}
                 animationSpeed={7}
-                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+                className="p-8 flex flex-col justify-between text-left h-full w-full bg-leaf-950/40"
               >
                 <div>
                   <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
@@ -919,7 +919,7 @@ export default function App() {
                 borderRadius={24}
                 borderWidth={3}
                 animationSpeed={4}
-                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+                className="p-8 flex flex-col justify-between text-left h-full w-full bg-leaf-950/40"
               >
                 <div>
                   <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
@@ -1034,7 +1034,7 @@ export default function App() {
                 borderRadius={24}
                 borderWidth={2}
                 animationSpeed={7}
-                className="p-8 flex flex-col justify-between text-left h-full min-h-[380px]"
+                className="p-8 flex flex-col justify-between text-left h-full w-full bg-leaf-950/40"
               >
                 <div>
                   <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
