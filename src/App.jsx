@@ -154,7 +154,7 @@ const circularCardData = [
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
     bgColor: "#111111",
-    padding: "p-2.5"
+    padding: "p-1"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
@@ -162,7 +162,7 @@ const circularCardData = [
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
     bgColor: "#ffffff",
-    padding: "p-2.5"
+    padding: "p-1"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
@@ -178,7 +178,7 @@ const circularCardData = [
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
     bgColor: "#ffffff",
-    padding: "p-2"
+    padding: "p-1"
   },
   { 
     image: "/images/postalprosplus_logo.png", 
@@ -186,7 +186,7 @@ const circularCardData = [
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
     bgColor: "#111111",
-    padding: "p-2.5"
+    padding: "p-1"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
@@ -194,7 +194,7 @@ const circularCardData = [
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
     bgColor: "#ffffff",
-    padding: "p-2.5"
+    padding: "p-1"
   },
   { 
     image: "/images/saltwatercam_logo.png", 
@@ -210,7 +210,7 @@ const circularCardData = [
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
     bgColor: "#ffffff",
-    padding: "p-2"
+    padding: "p-1"
   }
 ];
 
