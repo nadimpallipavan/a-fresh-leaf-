@@ -153,7 +153,7 @@ const circularCardData = [
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
-    bgColor: "#ffffff"
+    bgColor: "#111111"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
@@ -181,7 +181,7 @@ const circularCardData = [
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
-    bgColor: "#ffffff"
+    bgColor: "#111111"
   },
   { 
     image: "/images/fixmypagespeed_logo.png", 
