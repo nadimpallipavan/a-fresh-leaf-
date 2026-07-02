@@ -22,7 +22,7 @@ function FlipCard({ image, title, description, url, bgColor, padding, className,
   return (
     <div
       className={cn(
-        "group w-24 h-32 md:w-28 md:h-36 rounded-xl [perspective:1000px] transition-transform duration-300 ease-in-out hover:scale-110",
+        "group w-[76px] h-[100px] xs:w-24 xs:h-32 md:w-28 md:h-36 rounded-xl [perspective:1000px] transition-transform duration-300 ease-in-out hover:scale-110",
         className,
       )}
       style={style}
@@ -95,7 +95,8 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     return () => resizeObserver.disconnect()
   }, [])
 
-  const radius = size * 0.44 // 44% of the container size (pushes cards outward to prevent central text overlap)
+  const radiusMultiplier = size < 400 ? 0.48 : 0.44
+  const radius = size * radiusMultiplier // Dynamically pushes cards further out on small screens
   const centerX = size / 2
   const centerY = size / 2
 
@@ -106,7 +107,7 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     >
       {/* Central text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center tracking-wider leading-none mb-1 font-display">
+        <h3 className="text-base xs:text-2xl sm:text-3xl md:text-4xl font-black text-white text-center tracking-wider leading-none mb-1 font-display">
           Our Work
         </h3>
         <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-1">

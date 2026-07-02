@@ -595,8 +595,8 @@ export default function App() {
           <div className="lg:col-span-6 relative">
             <div className="aspect-[4/5] rounded-[40px] overflow-hidden border border-leaf-800 relative">
               <img 
-                src="/images/hero_bg.jpg" 
-                alt="Close up organic growth leaves" 
+                src="/images/about_hero.jpg" 
+                alt="Digital growth and web engineering" 
                 className="w-full h-full object-cover filter contrast-125"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-leaf-950 via-transparent to-transparent" />
