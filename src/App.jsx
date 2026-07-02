@@ -599,64 +599,6 @@ export default function App() {
         </Marquee>
       </section>
 
-      {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
-          {/* Story Left Media */}
-          <div className="lg:col-span-6 relative">
-            <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
-              <Logo iconOnly className="w-48 h-48 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.15)]" />
-            </div>
-            {/* Absolute Glass Card overlay */}
-            <div className="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-leaf-500/20 max-w-xs shadow-2xl">
-              <p className="text-sm font-medium italic text-leaf-300">
-                "Our philosophy is simple: Plant the seed, watch your business grow. We build web solutions that take root, scale, and rank."
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-leaf-800 flex items-center justify-center text-xs font-bold text-leaf-500">CF</div>
-                <div>
-                  <h4 className="text-xs font-bold text-white">Collin Fraum</h4>
-                  <p className="text-[10px] text-leaf-400">Founder & Lead Strategist</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Story Right Content */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight pb-2">
-              Digital growth is not accidental. It is engineered.
-            </h2>
-            <p className="text-leaf-300 mt-6 font-light leading-relaxed text-lg">
-              Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
-            </p>
-            <div className="mt-8 space-y-6 w-full">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">Speed & Metric Audited</h4>
-                  <p className="text-sm text-leaf-400 mt-1">We optimize every asset, code split, and server layout to ensure a perfect 100/100 score on Core Web Vitals.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">Localized SEO Authority</h4>
-                  <p className="text-sm text-leaf-400 mt-1">Ethical, rank-focused strategy designed to capture localized searches and outrank your target competition.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 3. PRODUCT SHOWCASE SECTION */}
       <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
@@ -748,6 +690,89 @@ export default function App() {
               cardWidth={480}
               cardHeight={300}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* 4. OUR WORK SECTION */}
+      <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          {/* Circular Flip Card Gallery */}
+          <div className="w-full relative flex items-center justify-center my-16 py-12 md:my-20">
+            <CircularGallery cards={circularCardData} />
+          </div>
+
+          {/* Call To Action Box */}
+          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12 animate-fade-in-up">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-3xl" />
+            <h3 className="text-2xl font-extrabold text-white font-display">Ready to build something great?</h3>
+            <p className="text-leaf-300 text-sm font-light mt-3 max-w-md mx-auto">
+              Partner with A Fresh Leaf for bespoke custom-coded web architectures and speed integrations.
+            </p>
+            <button 
+              onClick={(e) => handleNavClick(e, "contact", "contact-funnel")} 
+              className="mt-8 bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-3 rounded-full text-sm transition-all duration-300 shadow-md inline-block animate-pulse"
+            >
+              Start a Project
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. THE STORY / PHILOSOPHY */}
+      <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+          {/* Story Left Media */}
+          <div className="lg:col-span-6 relative">
+            <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
+              <Logo iconOnly className="w-48 h-48 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.15)]" />
+            </div>
+            {/* Absolute Glass Card overlay */}
+            <div className="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-leaf-500/20 max-w-xs shadow-2xl">
+              <p className="text-sm font-medium italic text-leaf-300">
+                "Our philosophy is simple: Plant the seed, watch your business grow. We build web solutions that take root, scale, and rank."
+              </p>
+              <div className="mt-4 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-leaf-800 flex items-center justify-center text-xs font-bold text-leaf-500">CF</div>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Collin Fraum</h4>
+                  <p className="text-[10px] text-leaf-400">Founder & Lead Strategist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Story Right Content */}
+          <div className="lg:col-span-6 flex flex-col items-start text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight pb-2">
+              Digital growth is not accidental. It is engineered.
+            </h2>
+            <p className="text-leaf-300 mt-6 font-light leading-relaxed text-lg">
+              Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
+            </p>
+            <div className="mt-8 space-y-6 w-full">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">Speed & Metric Audited</h4>
+                  <p className="text-sm text-leaf-400 mt-1">We optimize every asset, code split, and server layout to ensure a perfect 100/100 score on Core Web Vitals.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">Localized SEO Authority</h4>
+                  <p className="text-sm text-leaf-400 mt-1">Ethical, rank-focused strategy designed to capture localized searches and outrank your target competition.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1159,31 +1184,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col items-center">
-          {/* Circular Flip Card Gallery */}
-          <div className="w-full relative flex items-center justify-center my-16 py-12 md:my-20">
-            <CircularGallery cards={circularCardData} />
-          </div>
-
-          {/* Call To Action Box */}
-          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12 animate-fade-in-up">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-3xl" />
-            <h3 className="text-2xl font-extrabold text-white font-display">Ready to build something great?</h3>
-            <p className="text-leaf-300 text-sm font-light mt-3 max-w-md mx-auto">
-              Partner with A Fresh Leaf for bespoke custom-coded web architectures and speed integrations.
-            </p>
-            <button 
-              onClick={(e) => handleNavClick(e, "contact", "contact-funnel")} 
-              className="mt-8 bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-3 rounded-full text-sm transition-all duration-300 shadow-md inline-block animate-pulse"
-            >
-              Start a Project
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* 5. CONTACT FUNNEL SECTION */}
       <section id="contact-funnel" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
@@ -1199,33 +1199,8 @@ export default function App() {
       </section>
 
       {/* 5. ESTIMATE REQUEST / FOOTER */}
-      <footer id="estimate" className="relative bg-leaf-950 border-t border-leaf-900/40 pt-24 pb-12 px-6 lg:px-12">
+      <footer id="estimate" className="relative bg-leaf-950 border-t border-leaf-900/40 pt-16 pb-12 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          {/* Estimate Request Box */}
-          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-4xl mx-auto text-center mb-24 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-leaf-500/5 rounded-full blur-[80px]" />
-            
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Get a Fresh Start</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">Free Speed & SEO Audit</h2>
-            <p className="text-leaf-300 mt-3 max-w-md mx-auto font-light text-sm">
-              We will inspect your site's core web vitals, mobile responsiveness, and keyword indexation. No obligations.
-            </p>
-
-            <form onSubmit={handleAuditSubmit} className="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-              <input 
-                type="text" 
-                value={auditUrl}
-                onChange={(e) => setAuditUrl(e.target.value)}
-                required
-                placeholder="Enter your website URL (e.g. mysite.com)" 
-                className="flex-1 bg-leaf-900/40 border border-leaf-800 rounded-full px-6 py-4 text-white text-sm focus:outline-none focus:border-leaf-500/50"
-              />
-              <button type="submit" className="bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-md">
-                Request Free Audit
-              </button>
-            </form>
-          </div>
-
           {/* Links & Brand footer */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left">
             <div>
