@@ -760,20 +760,6 @@ export default function App() {
       {currentPage === "pricing" && (
       <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
-          {/* Public Creative Packages Section */}
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Public Packages</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">Simple, Transparent Pricing</h2>
-            <p className="text-leaf-400 mt-4 font-light">
-              Choose the perfect plan for your business growth. Scale or cancel at any time.
-            </p>
-          </div>
-
-          <PricingCreative />
-
-          {/* Spacer / Separator */}
-          <div className="my-20 border-t border-leaf-900/30 max-w-5xl mx-auto" />
-
           {/* Internal Preview Banner */}
           <div className="glass border border-yellow-500/30 bg-yellow-500/5 px-6 py-4 rounded-2xl mb-12 text-center max-w-4xl mx-auto">
             <span className="text-xs font-bold font-mono tracking-widest text-yellow-500 uppercase flex items-center justify-center gap-2">
@@ -782,18 +768,21 @@ export default function App() {
           </div>
 
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Internal Matrix</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">AFL + FMPS Pricing Matrix</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Pricing Packages</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">AFL + FMPS Pricing Plans</h2>
             <p className="text-leaf-400 mt-4 font-light">
               Exact project estimates aligned with current small-business design, technical SEO, and automation market ranges.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-4 xl:gap-8 max-w-7xl mx-auto pt-6">
             {/* Column 1: FMPS */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              initial={{ opacity: 0, y: 40, rotate: -2 }}
+              animate={{ opacity: 1, y: 0, rotate: -2 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative z-10 w-full rounded-3xl border border-leaf-800/40 bg-leaf-950/40 p-8 text-leaf-100 shadow-[0_0_0_1px_rgba(90,200,120,.05)_inset] backdrop-blur-md flex flex-col justify-between text-left overflow-hidden"
             >
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Diagnostics & Speed</span>
@@ -920,11 +909,21 @@ export default function App() {
 
             {/* Column 2: AFL Web Services */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              initial={{ opacity: 0, y: 60, rotate: 0 }}
+              animate={{ opacity: 1, y: -10, rotate: 0 }}
+              whileHover={{ y: -15, scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.7 }}
+              className="relative z-20 w-full rounded-3xl border-4 border-leaf-500/50 bg-gradient-to-b from-leaf-900 to-leaf-950 p-8 text-leaf-100 shadow-[0_0_20px_rgba(90,200,120,0.15)] flex flex-col justify-between text-left overflow-visible"
             >
+              <motion.div
+                animate={{ y: [10, 6, 10] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full border border-leaf-950/20 bg-leaf-500 px-5 py-1 text-[10px] font-extrabold text-leaf-950 shadow z-30 tracking-wider uppercase"
+              >
+                Best Deal
+              </motion.div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Design & Development</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-leaf-400">Design & Development</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-4">A Fresh Leaf (AFL) Builds</h3>
 
                 <div className="mb-6">
@@ -1028,8 +1027,11 @@ export default function App() {
 
             {/* Column 3: AI & System Operations */}
             <motion.div
-              whileHover={{ y: -3 }}
-              className="glass p-8 rounded-3xl border border-leaf-800 flex flex-col justify-between text-left relative overflow-hidden"
+              initial={{ opacity: 0, y: 40, rotate: 2 }}
+              animate={{ opacity: 1, y: 0, rotate: 2 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", duration: 0.6 }}
+              className="relative z-10 w-full rounded-3xl border border-leaf-800/40 bg-leaf-950/40 p-8 text-leaf-100 shadow-[0_0_0_1px_rgba(90,200,120,.05)_inset] backdrop-blur-md flex flex-col justify-between text-left overflow-hidden"
             >
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">AI & Automation</span>
