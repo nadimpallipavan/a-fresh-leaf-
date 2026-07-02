@@ -75,7 +75,6 @@ interface CircularGalleryProps {
 export default function CircularGallery({ cards }: CircularGalleryProps) {
   const galleryRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState(0)
-  const [rotation, setRotation] = useState(0)
 
   // Effect for responsive sizing
   useEffect(() => {
@@ -94,17 +93,6 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
     }
 
     return () => resizeObserver.disconnect()
-  }, [])
-
-  // Effect for animation loop
-  useEffect(() => {
-    let animationFrameId: number
-    const animate = () => {
-      setRotation((prevRotation) => prevRotation + 0.003)
-      animationFrameId = requestAnimationFrame(animate)
-    }
-    animationFrameId = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationFrameId)
   }, [])
 
   const radius = size * 0.44 // 44% of the container size (pushes cards outward to prevent central text overlap)
@@ -127,26 +115,28 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
       </div>
 
       {/* Circular arrangement of cards */}
-      {size > 0 &&
-        cards.map((card, index) => {
-          // Position cards evenly in the circle
-          const angle = (index / cards.length) * 2 * Math.PI - Math.PI / 2 + rotation
-          const x = centerX + radius * Math.cos(angle)
-          const y = centerY + radius * Math.sin(angle)
+      <div className="absolute inset-0 animate-spin-slow pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
+        {size > 0 &&
+          cards.map((card, index) => {
+            // Position cards evenly in the circle
+            const angle = (index / cards.length) * 2 * Math.PI - Math.PI / 2
+            const x = centerX + radius * Math.cos(angle)
+            const y = centerY + radius * Math.sin(angle)
 
-          return (
-            <FlipCard
-              key={index}
-              {...card}
-              className="absolute hover:z-20"
-              style={{
-                left: `${x}px`,
-                top: `${y}px`,
-                transform: `translate(-50%, -50%) rotate(${(angle + Math.PI / 2) * (180 / Math.PI)}deg)`,
-              }}
-            />
-          )
-        })}
+            return (
+              <FlipCard
+                key={index}
+                {...card}
+                className="absolute hover:z-20 pointer-events-auto"
+                style={{
+                  left: `${x}px`,
+                  top: `${y}px`,
+                  transform: `translate(-50%, -50%) rotate(${(angle + Math.PI / 2) * (180 / Math.PI)}deg)`,
+                }}
+              />
+            )
+          })}
+      </div>
     </div>
   )
 }
