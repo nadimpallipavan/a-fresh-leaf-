@@ -61,6 +61,8 @@ function FlipCard({ image, title, description, url, bgColor, padding, className,
   )
 }
 
+import Logo from "../Logo"
+
 interface CircularGalleryProps {
   cards: {
     image: string
@@ -105,12 +107,10 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
       ref={galleryRef}
       className="relative w-full max-w-[340px] sm:max-w-[480px] md:max-w-[600px] aspect-square flex items-center justify-center mx-auto"
     >
-      {/* Central text */}
+      {/* Central Logo */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
-        <h3 className="text-base xs:text-2xl sm:text-3xl md:text-4xl font-black text-white text-center tracking-wider leading-none mb-1 font-display">
-          Our Work
-        </h3>
-        <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-1">
+        <Logo iconOnly className="w-12 h-12 xs:w-16 xs:h-16 md:w-20 md:h-20 animate-pulse drop-shadow-[0_0_20px_rgba(90,200,120,0.2)]" />
+        <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-2">
           Hover to Flip
         </p>
       </div>

@@ -635,19 +635,25 @@ export default function App() {
       {/* 4. OUR WORK SECTION */}
       <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          {/* Circular Flip Card Gallery */}
-          <div className="w-full relative flex items-center justify-center my-16 py-12 md:my-20">
-            <CircularGallery cards={circularCardData} />
+          {/* Header on top of gallery */}
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Case Studies</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our Work</h2>
+            <p className="text-leaf-400 mt-4 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
           </div>
 
+          {/* Circular Flip Card Gallery */}
+          <div className="w-full relative flex items-center justify-center my-8 py-8 md:my-16">
+            <CircularGallery cards={circularCardData} />
+          </div>
         </div>
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
       <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-16 items-center">
           {/* Story Left Media */}
-          <div className="lg:col-span-6 relative">
+          <div className="w-full lg:col-span-6 order-2 lg:order-1 relative">
             <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
@@ -669,7 +675,7 @@ export default function App() {
           </div>
 
           {/* Story Right Content */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left">
+          <div className="w-full lg:col-span-6 order-1 lg:order-2 flex flex-col items-start text-left">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight pb-2">
               Digital growth is not accidental. It is engineered.
