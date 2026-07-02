@@ -538,11 +538,11 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
+      <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-white mt-3 text-center">Our Core Services</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our Core <span className="text-leaf-400">Services</span></h2>
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
             
             {/* Rising Glow particle emitter */}
@@ -638,7 +638,7 @@ export default function App() {
           {/* Header on top of gallery */}
           <div className="text-center max-w-2xl mx-auto mb-8">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Case Studies</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our Work</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Work</span></h2>
             <p className="text-leaf-400 mt-4 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
           </div>
 
@@ -678,7 +678,7 @@ export default function App() {
           <div className="w-full lg:col-span-6 order-1 lg:order-2 flex flex-col items-start text-left">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight pb-2">
-              Digital growth is not accidental. It is engineered.
+              Digital growth is not accidental. It is <span className="text-leaf-400">engineered.</span>
             </h2>
             <p className="text-leaf-300 mt-6 font-light leading-relaxed text-lg">
               Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
@@ -708,7 +708,7 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
+      <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
           {/* Internal Preview Banner */}
           <div className="glass border border-yellow-500/30 bg-yellow-500/5 px-6 py-4 rounded-2xl mb-12 text-center max-w-4xl mx-auto">
@@ -739,7 +739,7 @@ export default function App() {
 
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Internal Matrix</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">AFL + FMPS Pricing Matrix</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-3">AFL + FMPS Pricing <span className="text-leaf-400">Matrix</span></h2>
             <p className="text-leaf-400 mt-4 font-light">
               Exact project estimates aligned with current small-business design, technical SEO, and automation market ranges.
             </p>
@@ -1119,7 +1119,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-display text-white mt-3">Free Speed & SEO Audit</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-3">Free Speed & SEO <span className="text-leaf-400">Audit</span></h2>
             <p className="text-leaf-400 mt-4 font-light">Complete our quick diagnostic questionnaire to queue your audit report callback with Collin Fraum.</p>
           </div>
           <LeadFunnel initialUrl={auditUrl} onComplete={(data) => {
@@ -1129,7 +1129,7 @@ export default function App() {
       </section>
 
       {/* 5. ESTIMATE REQUEST / FOOTER */}
-      <footer id="estimate" className="relative bg-leaf-950 border-t border-leaf-900/40 pt-16 pb-12 px-6 lg:px-12">
+      <footer id="estimate" className="relative bg-black border-t border-leaf-900/40 pt-16 pb-12 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Links & Brand footer */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left">
