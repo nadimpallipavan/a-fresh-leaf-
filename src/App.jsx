@@ -535,69 +535,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services Marquee Banner under Hero */}
-      <section className="w-full bg-leaf-950/60 border-y border-leaf-900/40 py-6 backdrop-blur-md relative z-10 flex flex-col items-center gap-3">
-        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-leaf-500 font-sans select-none">
-          Our Services
-        </span>
-        <Marquee duration={30} pauseOnHover className="text-white">
-          <div className="flex items-center gap-12 text-sm md:text-base font-medium tracking-wider uppercase font-display select-none">
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Website Design & Rebuilds</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-            
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Website Speed & Trust Cleanup</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-            
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>AI Assistants & Chat Experiences</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-            
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Business Automation & Workflows</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-            
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Hosting & Website Care Plans</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-            
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Client Intake & Client Portals</span>
-            </span>
-            <span className="text-leaf-800">•</span>
 
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>CRM & Sales-Support Systems</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>Branding & Mobile-First UX</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-
-            <span className="flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
-              <span>DevOps, QA & Rollback Backups</span>
-            </span>
-            <span className="text-leaf-800">•</span>
-          </div>
-        </Marquee>
-      </section>
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
       <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-leaf-950/60 border-t border-leaf-900/30">
@@ -702,20 +640,6 @@ export default function App() {
             <CircularGallery cards={circularCardData} />
           </div>
 
-          {/* Call To Action Box */}
-          <div className="glass p-12 rounded-[40px] border border-leaf-500/20 max-w-xl text-center relative overflow-hidden shadow-xl mt-12 animate-fade-in-up">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-3xl" />
-            <h3 className="text-2xl font-extrabold text-white font-display">Ready to build something great?</h3>
-            <p className="text-leaf-300 text-sm font-light mt-3 max-w-md mx-auto">
-              Partner with A Fresh Leaf for bespoke custom-coded web architectures and speed integrations.
-            </p>
-            <button 
-              onClick={(e) => handleNavClick(e, "contact", "contact-funnel")} 
-              className="mt-8 bg-white hover:bg-leaf-100 text-leaf-950 font-bold px-8 py-3 rounded-full text-sm transition-all duration-300 shadow-md inline-block animate-pulse"
-            >
-              Start a Project
-            </button>
-          </div>
         </div>
       </section>
 
@@ -730,7 +654,7 @@ export default function App() {
               <Logo iconOnly className="w-48 h-48 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.15)]" />
             </div>
             {/* Absolute Glass Card overlay */}
-            <div className="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-leaf-500/20 max-w-xs shadow-2xl">
+            <div className="md:absolute md:-bottom-6 md:-right-6 relative mt-6 mx-auto glass p-6 rounded-3xl border border-leaf-500/20 max-w-full md:max-w-xs shadow-2xl">
               <p className="text-sm font-medium italic text-leaf-300">
                 "Our philosophy is simple: Plant the seed, watch your business grow. We build web solutions that take root, scale, and rank."
               </p>
