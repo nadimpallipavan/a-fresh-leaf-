@@ -508,7 +508,7 @@ export default function App() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-sm md:text-base text-zinc-400 mt-4 max-w-lg leading-relaxed font-sans"
           >
-            A fresh leaf builds websites, SEO, and digital strategy that take root and scale.
+            A fresh leaf builds custom websites, SEO, and digital strategy that take root and scale.
           </motion.p>
 
           {/* Scroll action indicator */}
