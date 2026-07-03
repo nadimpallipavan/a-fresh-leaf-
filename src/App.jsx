@@ -640,6 +640,15 @@ export default function App() {
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Case Studies</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Work</span></h2>
             <p className="text-leaf-400 mt-4 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
           </div>
 
           {/* Circular Flip Card Gallery */}
@@ -651,9 +660,28 @@ export default function App() {
 
       {/* 2. THE STORY / PHILOSOPHY */}
       <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
+        <div className="max-w-7xl mx-auto flex flex-col items-center mb-16">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">About <span className="text-leaf-400">Us</span></h2>
+            <h3 className="text-lg md:text-xl font-sans font-semibold text-leaf-300 mt-4 leading-normal text-center">
+              Digital growth is not accidental. It is engineered.
+            </h3>
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-16 items-center">
           {/* Story Left Media */}
-          <div className="w-full lg:col-span-6 order-2 lg:order-1 relative">
+          <div className="w-full lg:col-span-6 relative">
             <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
@@ -675,12 +703,7 @@ export default function App() {
           </div>
 
           {/* Story Right Content */}
-          <div className="w-full lg:col-span-6 order-1 lg:order-2 flex flex-col items-start text-left">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-left">About <span className="text-leaf-400">Us</span></h2>
-            <h3 className="text-lg md:text-xl font-sans font-semibold text-leaf-300 mt-4 leading-normal">
-              Digital growth is not accidental. It is engineered.
-            </h3>
+          <div className="w-full lg:col-span-6 flex flex-col items-start text-left">
             <p className="text-leaf-300 mt-4 font-light leading-relaxed text-base">
               Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
             </p>
@@ -744,6 +767,15 @@ export default function App() {
             <p className="text-leaf-400 mt-4 font-light text-center">
               Simple, value-backed project plans aligned with custom web design, speed upgrades, and CRM automations.
             </p>
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -1122,6 +1154,15 @@ export default function App() {
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-3">Free Speed & SEO <span className="text-leaf-400">Audit</span></h2>
             <p className="text-leaf-400 mt-4 font-light">Complete our quick diagnostic questionnaire to queue your audit report callback with Collin Fraum.</p>
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
           </div>
           <LeadFunnel initialUrl={auditUrl} onComplete={(data) => {
             console.log("Lead qualification data:", data);
