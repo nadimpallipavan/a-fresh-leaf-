@@ -50,63 +50,63 @@ const servicesList = [
     index: "001",
     tag: "Website Design & Rebuilds",
     title: "Hand-crafted, custom-coded layouts optimized for mobile performance and visitor conversion.",
-    imageSrc: "/images/web_design_service.jpg",
+    imageSrc: "./images/web_design_service.jpg",
     color: "orange"
   },
   {
     index: "002",
     tag: "Website Speed & Trust Cleanup",
     title: "Diagnostic and cleanup sweeps targeting 90+ Core Web Vitals, script cleanups, and trust elements.",
-    imageSrc: "/images/speed_cleanup_service.jpg",
+    imageSrc: "./images/speed_cleanup_service.jpg",
     color: "blue"
   },
   {
     index: "003",
     tag: "AI Assistants & Chat Experiences",
     title: "Custom-trained AI agents and automated support chat setups mapped to your business workflows.",
-    imageSrc: "/images/ai_chat_service.jpg",
+    imageSrc: "./images/ai_chat_service.jpg",
     color: "purple"
   },
   {
     index: "004",
     tag: "Business Automation & Workflows",
     title: "Lead nurturing sequences, automated calendar booking, and CRM system integrations.",
-    imageSrc: "/images/automation_service.jpg",
+    imageSrc: "./images/automation_service.jpg",
     color: "green"
   },
   {
     index: "005",
     tag: "Hosting & Website Care Plans",
     title: "Enterprise cloud hosting, automated daily backups, real-time security, and updates.",
-    imageSrc: "/images/hosting_care_service.jpg",
+    imageSrc: "./images/hosting_care_service.jpg",
     color: "orange"
   },
   {
     index: "006",
     tag: "Client Intake & Client Portals",
     title: "Bespoke onboarding forms and client-area dashboard designs to streamline communication.",
-    imageSrc: "/images/client_intake_service.jpg",
+    imageSrc: "./images/client_intake_service.jpg",
     color: "purple"
   },
   {
     index: "007",
     tag: "CRM & Sales-Support Systems",
     title: "High-performing contact capture, sales pipelines, and automatic notification triggers.",
-    imageSrc: "/images/crm_sales_service.jpg",
+    imageSrc: "./images/crm_sales_service.jpg",
     color: "blue"
   },
   {
     index: "008",
     tag: "Branding & Mobile-First UX",
     title: "Refined brand typography, mobile usability testing, and conversion-centered trust indicators.",
-    imageSrc: "/images/branding_ux_service.jpg",
+    imageSrc: "./images/branding_ux_service.jpg",
     color: "green"
   },
   {
     index: "009",
     tag: "DevOps, QA & Rollback Backups",
     title: "Professional version control setups, staging environments, QA checks, and rollback backups.",
-    imageSrc: "/images/devops_qa_service.jpg",
+    imageSrc: "./images/devops_qa_service.jpg",
     color: "orange"
   }
 
@@ -124,44 +124,44 @@ const mobileNavLinks = [
   {
     heading: "Home",
     subheading: "Return to the main page backdrop",
-    imgSrc: "/images/hero_bg.jpg",
+    imgSrc: "./images/hero_bg.jpg",
     href: "#"
   },
   {
     heading: "Services",
     subheading: "Explore our digital growth capabilities",
-    imgSrc: "/images/web_design_mockup.jpg",
+    imgSrc: "./images/web_design_mockup.jpg",
     href: "#services"
   },
   {
     heading: "Our Work",
     subheading: "Case studies of brands that scaled",
-    imgSrc: "/images/page_speed_mockup.jpg",
+    imgSrc: "./images/page_speed_mockup.jpg",
     href: "#work"
   },
   {
     heading: "About",
     subheading: "Collin Fraum and the AFL mission",
-    imgSrc: "/images/seo_mockup.jpg",
+    imgSrc: "./images/seo_mockup.jpg",
     href: "#story"
   },
   {
     heading: "Pricing",
     subheading: "Starter and Growth hosting options",
-    imgSrc: "/images/wordpress_maintenance_mockup.png",
+    imgSrc: "./images/wordpress_maintenance_mockup.png",
     href: "#pricing"
   },
   {
     heading: "Contact",
     subheading: "Get started with your custom estimate",
-    imgSrc: "/images/email_automation_mockup.png",
+    imgSrc: "./images/email_automation_mockup.png",
     href: "#estimate"
   }
 ];
 
 const circularCardData = [
   { 
-    image: "/images/postalprosplus_logo.png", 
+    image: "./images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
@@ -169,7 +169,7 @@ const circularCardData = [
     padding: "p-1"
   },
   { 
-    image: "/images/fixmypagespeed_logo.png", 
+    image: "./images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
@@ -177,7 +177,7 @@ const circularCardData = [
     padding: "p-1"
   },
   { 
-    image: "/images/saltwatercam_logo.png", 
+    image: "./images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
     description: "Boynton Beach Inlet live underwater camera stream.",
@@ -185,7 +185,7 @@ const circularCardData = [
     padding: "p-0"
   },
   { 
-    image: "/images/kingstonk9_logo.png", 
+    image: "./images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
@@ -193,7 +193,7 @@ const circularCardData = [
     padding: "p-1"
   },
   { 
-    image: "/images/postalprosplus_logo.png", 
+    image: "./images/postalprosplus_logo.png", 
     title: "PostalProsPlus", 
     url: "https://postalprosplus.com", 
     description: "Postal & shipping services with strong contact flow.",
@@ -201,7 +201,7 @@ const circularCardData = [
     padding: "p-1"
   },
   { 
-    image: "/images/fixmypagespeed_logo.png", 
+    image: "./images/fixmypagespeed_logo.png", 
     title: "FixMyPageSpeed", 
     url: "https://fixmypagespeed.com", 
     description: "Performance optimization WooCommerce store.",
@@ -209,7 +209,7 @@ const circularCardData = [
     padding: "p-1"
   },
   { 
-    image: "/images/saltwatercam_logo.png", 
+    image: "./images/saltwatercam_logo.png", 
     title: "SaltwaterCam", 
     url: "https://saltwatercam.com", 
     description: "Boynton Beach Inlet live underwater camera stream.",
@@ -217,7 +217,7 @@ const circularCardData = [
     padding: "p-0"
   },
   { 
-    image: "/images/kingstonk9_logo.png", 
+    image: "./images/kingstonk9_logo.png", 
     title: "Kingston K9", 
     url: "https://kingstonk9.com", 
     description: "Premium dog training platform with local SEO.",
