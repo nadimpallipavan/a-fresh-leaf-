@@ -681,11 +681,16 @@ export default function App() {
 
         <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-16 items-center">
           {/* Story Left Media */}
-          <div className="w-full lg:col-span-6 relative">
-            <div className="aspect-[4/5] rounded-[40px] border border-leaf-800 bg-leaf-950/40 relative flex items-center justify-center p-12 overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/10 via-transparent to-leaf-900/10 pointer-events-none" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-leaf-500/5 rounded-full blur-[80px] pointer-events-none" />
-              <Logo iconOnly className="w-48 h-48 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.15)]" />
+          <div className="w-full lg:col-span-6 relative flex justify-center">
+            <div className="w-full max-w-sm aspect-square rounded-[32px] border border-leaf-800/40 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 relative flex items-center justify-center p-8 overflow-hidden shadow-2xl">
+              {/* Pulsing Green Concentric Decorative Rings */}
+              <div className="absolute w-64 h-64 rounded-full border border-leaf-500/5 animate-[spin_40s_linear_infinite]" />
+              <div className="absolute w-52 h-52 rounded-full border border-dashed border-leaf-500/10 animate-[spin_20s_linear_infinite_reverse]" />
+              <div className="absolute w-40 h-40 rounded-full border border-leaf-500/15" />
+              
+              <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/5 via-transparent to-leaf-900/5 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-leaf-500/5 rounded-full blur-[60px] pointer-events-none" />
+              <Logo iconOnly className="w-36 h-36 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.2)]" />
             </div>
             {/* Absolute Glass Card overlay */}
             <div className="md:absolute md:-bottom-6 md:-right-6 relative mt-6 mx-auto glass p-6 rounded-3xl border border-leaf-500/20 max-w-full md:max-w-xs shadow-2xl">
@@ -734,14 +739,26 @@ export default function App() {
       {/* Managed WordPress Hosting Sub-Section */}
       <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
-          {/* Internal Preview Banner */}
-          <div className="glass border border-yellow-500/30 bg-yellow-500/5 px-6 py-4 rounded-2xl mb-12 text-center max-w-4xl mx-auto">
-            <span className="text-xs font-bold font-mono tracking-widest text-yellow-500 uppercase flex items-center justify-center gap-2">
-              ⚠️ OWNER REVIEW PRICING BOARD — DRAFT PREVIEW ONLY (NOT PUBLIC)
-            </span>
+          {/* Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Transparent Cost Structure</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Pricing</span></h2>
+            <p className="text-leaf-400 mt-4 font-light text-center">
+              Simple, value-backed project plans aligned with custom web design, speed upgrades, and CRM automations.
+            </p>
+            {/* Rising Glow particle emitter */}
+            <div className="w-full mt-6 flex justify-center">
+              <RisingGlow
+                particleCount={80}
+                particleColor="#55b038"
+                height={80}
+                width="100%"
+              />
+            </div>
           </div>
+
           {/* July 4th Special Content Banner */}
-          <div className="relative overflow-hidden rounded-[32px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-6 md:p-8 mb-12 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
+          <div className="relative overflow-hidden rounded-[32px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-8 md:p-10 mb-16 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
             <div className="absolute top-0 left-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase mb-4 font-mono">
               🇺🇸 Independence Day Special
@@ -758,23 +775,6 @@ export default function App() {
               >
                 Claim 25% Offer
               </button>
-            </div>
-          </div>
-
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Transparent Cost Structure</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Pricing</span></h2>
-            <p className="text-leaf-400 mt-4 font-light text-center">
-              Simple, value-backed project plans aligned with custom web design, speed upgrades, and CRM automations.
-            </p>
-            {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
-              <RisingGlow
-                particleCount={80}
-                particleColor="#55b038"
-                height={80}
-                width="100%"
-              />
             </div>
           </div>
 
