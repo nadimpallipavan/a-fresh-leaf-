@@ -1234,3 +1234,5 @@ export default function App() {
     </div>
   );
 }
+
+// Automated FTP Deployment Trigger
