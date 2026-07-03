@@ -1164,49 +1164,9 @@ export default function App() {
               />
             </div>
           </div>
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: Form */}
-            <div className="lg:col-span-7 w-full">
-              <LeadFunnel initialUrl={auditUrl} onComplete={(data) => {
-                console.log("Lead qualification data:", data);
-              }} />
-            </div>
-            
-            {/* Right Column: Contact info */}
-            <div className="lg:col-span-5 w-full glass p-8 md:p-10 rounded-[40px] border border-leaf-500/20 bg-leaf-950/40 text-left">
-              <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Direct Contact</span>
-              <h3 className="text-2xl font-serif font-bold text-white mt-2 mb-6">Let's Connect</h3>
-              
-              <div className="space-y-6 text-sm text-leaf-300 font-light">
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Preferred Contact Method</h4>
-                  <p>Form first, then email follow-up.</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Business Email</h4>
-                  <p><a href="mailto:afreshleaf@afreshleaf.com" className="hover:text-leaf-300 transition-colors">afreshleaf@afreshleaf.com</a></p>
-                </div>
-                
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Business Phone</h4>
-                  <p><a href="tel:5613644688" className="hover:text-leaf-300 transition-colors">(561) 364-4688</a></p>
-                </div>
-                
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Service Area</h4>
-                  <p>South Florida / Palm Beach County</p>
-                  <p className="text-xs text-leaf-400 mt-1">Serving Florida and remote digital-growth clients</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Business Hours</h4>
-                  <p>Monday–Friday, 9:00 AM–6:00 PM Eastern</p>
-                  <p className="text-xs text-leaf-400 mt-1">After-hours priority support by appointment only.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <LeadFunnel initialUrl={auditUrl} onComplete={(data) => {
+            console.log("Lead qualification data:", data);
+          }} />
         </div>
       </section>
 
