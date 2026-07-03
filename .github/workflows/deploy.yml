@@ -30,8 +30,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          port: 22
+          protocol: ftp
+          port: 21
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }} # e.g. public_html/_afl_pavan_preview_20260703/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }} # e.g. _afl_pavan_preview_20260703/
           dangerous-clean-slate: false
