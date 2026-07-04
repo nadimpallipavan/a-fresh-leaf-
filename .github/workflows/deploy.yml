@@ -27,11 +27,11 @@ jobs:
       - name: 🚀 Sync Files to FTP Staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.AFL_FTP_HOST }}
+          username: ${{ secrets.AFL_FTP_USER }}
+          password: ${{ secrets.AFL_FTP_PASS }}
           protocol: ftp
           port: 21
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }} # e.g. _afl_pavan_preview_20260703/
+          server-dir: ${{ secrets.AFL_FTP_REMOTE_DIR }}
           dangerous-clean-slate: false
