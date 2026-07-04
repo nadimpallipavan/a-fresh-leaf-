@@ -37,6 +37,6 @@ jobs:
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" <<EOF
           set ftp:ssl-allow no
-          mirror -R --delete --verbose ./dist "$FTP_REMOTE_DIR"
+          mirror -R --delete --verbose ./dist/ "$FTP_REMOTE_DIR"
           bye
           EOF
