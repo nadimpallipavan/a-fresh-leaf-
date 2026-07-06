@@ -41,7 +41,10 @@
   background: rgba(12, 26, 16, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
+  @media (min-width: 768px) {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
 }
 
 @utility glass-light {
