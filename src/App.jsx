@@ -990,25 +990,15 @@ export default function App() {
             🇺🇸 July 4th Special: 25% Off with code <strong className="bg-leaf-900 px-1.5 py-0.5 rounded text-white ml-1">AFL4TH25</strong>
           </div>
  
-          {/* July 4th Special Content Banner */}
-          <div className="relative overflow-hidden rounded-[24px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-4 md:p-6 mb-6 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md hidden md:block">
-            <div className="absolute top-0 left-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase mb-4 font-mono">
-              🇺🇸 Independence Day Special
+          {/* Compact Promo Banner */}
+          <div className="hidden md:flex bg-emerald-950/40 border border-emerald-500/20 rounded-full px-6 py-2.5 mb-6 text-xs font-semibold text-emerald-400 max-w-2xl mx-auto shadow-md items-center justify-between backdrop-blur-md">
+            <span className="flex items-center gap-2">
+              <span className="animate-pulse">🇺🇸</span>
+              <span>JULY 4TH SPECIAL: 25% OFF WEBSITE REBUILDS & CRM SETUP</span>
             </span>
-            <h3 className="text-xl md:text-2xl font-extrabold text-white font-display">July 4th Celebration Sale — 25% Off</h3>
-            <p className="text-leaf-300 text-xs md:text-sm mt-3 font-light max-w-2xl mx-auto leading-relaxed">
-              Accelerate your local business growth. Get **25% off** all custom website rebuilds, speed optimizations, and automation workflow setup packages ordered by July 7th.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <span className="text-xs font-mono text-leaf-400">Use promo code: <strong className="text-white bg-leaf-900 border border-leaf-800 px-2.5 py-1 rounded text-sm font-bold tracking-wide">AFL4TH25</strong></span>
-              <button 
-                onClick={() => setCurrentPage("contact")} 
-                className="bg-emerald-500 hover:bg-emerald-600 text-neutral-950 font-bold px-6 py-2 rounded-full text-[11px] uppercase tracking-wider transition-all duration-300 shadow-md"
-              >
-                Claim 25% Offer
-              </button>
-            </div>
+            <span className="font-mono bg-leaf-900 text-white border border-leaf-800 px-2.5 py-0.5 rounded font-bold tracking-wide">
+              AFL4TH25
+            </span>
           </div>
 
           <div onScroll={handlePricingScroll} className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-6 lg:px-0 scrollbar-thin">
@@ -1393,7 +1383,7 @@ export default function App() {
       </section>
 
       {/* 5. CONTACT FUNNEL SECTION */}
-      <section id="contact-funnel" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-20 lg:justify-start">
+      <section id="contact-funnel" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-8 lg:justify-center">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
