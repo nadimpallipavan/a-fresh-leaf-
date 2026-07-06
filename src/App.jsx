@@ -1532,28 +1532,6 @@ export default function App() {
                     Mobile
                   </button>
                 </div>
-
-                {/* Zoom / Scale Toggles */}
-                <div className="flex items-center gap-1 bg-leaf-950/60 border border-leaf-900 p-1 rounded-full">
-                  <button
-                    onClick={() => setPreviewZoom(75)}
-                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 75 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                  >
-                    75%
-                  </button>
-                  <button
-                    onClick={() => setPreviewZoom(90)}
-                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 90 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                  >
-                    90%
-                  </button>
-                  <button
-                    onClick={() => setPreviewZoom(100)}
-                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 100 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                  >
-                    100%
-                  </button>
-                </div>
               </div>
               
               <button
@@ -1576,16 +1554,21 @@ export default function App() {
                   maxWidth: "100%"
                 }}
               >
-                <iframe
-                  src={previewUrl}
-                  title={`Live preview of ${previewTitle}`}
-                  className="border-none bg-white origin-top-left"
-                  style={{
-                    width: `${10000 / previewZoom}%`,
-                    height: `${10000 / previewZoom}%`,
-                    transform: `scale(${previewZoom / 100})`,
-                  }}
-                />
+                {previewUrl.includes("postalprosplus.com") ? (
+                  <div className="w-full h-full overflow-y-auto bg-neutral-950 flex flex-col items-center">
+                    <img
+                      src="./images/woocommerce_mockup.png"
+                      alt="PostalProsPlus Layout Showcase"
+                      className="w-full h-auto object-contain select-none pointer-events-none"
+                    />
+                  </div>
+                ) : (
+                  <iframe
+                    src={previewUrl}
+                    title={`Live preview of ${previewTitle}`}
+                    className="w-full h-full border-none bg-white"
+                  />
+                )}
               </div>
             </div>
           </motion.div>
