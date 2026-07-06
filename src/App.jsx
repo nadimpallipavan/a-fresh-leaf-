@@ -257,6 +257,7 @@ export default function App() {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [previewTitle, setPreviewTitle] = useState("");
   const [deviceFrame, setDeviceFrame] = useState("desktop");
+  const [previewZoom, setPreviewZoom] = useState(90);
   
   const serviceFeatures = {
     "001": [
@@ -1502,33 +1503,57 @@ export default function App() {
             className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-md flex flex-col"
           >
             {/* Top Bar Controls */}
-            <div className="w-full bg-neutral-950 border-b border-leaf-900/40 p-4 flex items-center justify-between z-20">
+            <div className="w-full bg-neutral-950 border-b border-leaf-900/40 p-4 flex flex-col sm:flex-row gap-4 items-center justify-between z-20">
               <div className="flex items-center gap-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-leaf-500">Live Client Showcase</span>
                 <span className="text-leaf-800">|</span>
                 <h3 className="text-sm font-semibold text-white">{previewTitle}</h3>
               </div>
               
-              {/* Device Frame Toggles */}
-              <div className="hidden sm:flex items-center gap-2 bg-leaf-950/60 border border-leaf-900 p-1 rounded-full">
-                <button
-                  onClick={() => setDeviceFrame("desktop")}
-                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "desktop" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                >
-                  Desktop
-                </button>
-                <button
-                  onClick={() => setDeviceFrame("tablet")}
-                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "tablet" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                >
-                  Tablet
-                </button>
-                <button
-                  onClick={() => setDeviceFrame("mobile")}
-                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "mobile" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
-                >
-                  Mobile
-                </button>
+              <div className="flex items-center gap-3">
+                {/* Device Frame Toggles */}
+                <div className="flex items-center gap-1.5 bg-leaf-950/60 border border-leaf-900 p-1 rounded-full">
+                  <button
+                    onClick={() => setDeviceFrame("desktop")}
+                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "desktop" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    Desktop
+                  </button>
+                  <button
+                    onClick={() => setDeviceFrame("tablet")}
+                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "tablet" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    Tablet
+                  </button>
+                  <button
+                    onClick={() => setDeviceFrame("mobile")}
+                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "mobile" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    Mobile
+                  </button>
+                </div>
+
+                {/* Zoom / Scale Toggles */}
+                <div className="flex items-center gap-1 bg-leaf-950/60 border border-leaf-900 p-1 rounded-full">
+                  <button
+                    onClick={() => setPreviewZoom(75)}
+                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 75 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    75%
+                  </button>
+                  <button
+                    onClick={() => setPreviewZoom(90)}
+                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 90 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    90%
+                  </button>
+                  <button
+                    onClick={() => setPreviewZoom(100)}
+                    className={`px-2 py-0.5 rounded-full text-[9px] font-bold transition-colors cursor-pointer ${previewZoom === 100 ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                  >
+                    100%
+                  </button>
+                </div>
               </div>
               
               <button
@@ -1543,7 +1568,7 @@ export default function App() {
             </div>
             
             {/* Frame Body */}
-            <div className="flex-1 w-full flex items-center justify-center p-4 bg-neutral-900/50">
+            <div className="flex-1 w-full flex items-center justify-center p-4 bg-neutral-900/50 overflow-auto">
               <div
                 className="h-full bg-white rounded-2xl border border-leaf-900/40 overflow-hidden shadow-2xl transition-all duration-500"
                 style={{
@@ -1554,7 +1579,12 @@ export default function App() {
                 <iframe
                   src={previewUrl}
                   title={`Live preview of ${previewTitle}`}
-                  className="w-full h-full border-none bg-white"
+                  className="border-none bg-white origin-top-left"
+                  style={{
+                    width: `${10000 / previewZoom}%`,
+                    height: `${10000 / previewZoom}%`,
+                    transform: `scale(${previewZoom / 100})`,
+                  }}
                 />
               </div>
             </div>

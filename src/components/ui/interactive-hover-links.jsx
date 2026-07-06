@@ -54,7 +54,7 @@ function Link({ heading, imgSrc, subheading, href, onClick }) {
       onClick={(e) => onClick && onClick(e, href)}
       initial="initial"
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b border-leaf-900/60 py-4 transition-colors duration-500 hover:border-leaf-500 md:py-6"
+      className="group relative flex items-center justify-between py-4 transition-colors duration-500 md:py-6"
     >
       <div className="z-10 text-left">
         <motion.span
