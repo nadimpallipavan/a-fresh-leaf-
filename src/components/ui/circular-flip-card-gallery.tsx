@@ -20,15 +20,23 @@ interface FlipCardProps {
 }
  
 function FlipCard({ image, title, description, url, bgColor, padding, className, style, onSelectCard }: FlipCardProps) {
+  const [isFlipped, setIsFlipped] = React.useState(false)
+
   return (
     <div
+      onClick={() => setIsFlipped(!isFlipped)}
       className={cn(
-        "group w-[76px] h-[100px] xs:w-24 xs:h-32 md:w-28 md:h-36 rounded-xl [perspective:1000px] transition-transform duration-300 ease-in-out hover:scale-110",
+        "group w-[76px] h-[100px] xs:w-24 xs:h-32 md:w-28 md:h-36 rounded-xl [perspective:1000px] transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer",
         className,
       )}
       style={style}
     >
-      <div className="relative w-full h-full rounded-xl shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div 
+        className={cn(
+          "relative w-full h-full rounded-xl shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]",
+          isFlipped ? "[transform:rotateY(180deg)]" : ""
+        )}
+      >
         {/* Front side - Logo Image */}
         <div 
           className={cn(
@@ -49,7 +57,7 @@ function FlipCard({ image, title, description, url, bgColor, padding, className,
           {url && (
             <button 
               onClick={(e) => {
-                e.preventDefault();
+                e.stopPropagation();
                 if (onSelectCard) {
                   onSelectCard(url, title);
                 }
