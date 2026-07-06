@@ -743,7 +743,7 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 lg:pt-24 lg:justify-center lg:overflow-hidden">
+      <section id="services" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-4 lg:pt-24 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
@@ -838,7 +838,7 @@ export default function App() {
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 lg:pt-24 lg:justify-center lg:overflow-hidden">
+      <section id="work" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-4 lg:pt-24 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
           {/* Header on top of gallery */}
           <div className="text-center max-w-2xl mx-auto mb-2">
@@ -864,7 +864,7 @@ export default function App() {
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 lg:pt-24 lg:justify-center lg:overflow-hidden">
+      <section id="story" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-4 lg:pt-24 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center mb-4">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
@@ -942,7 +942,7 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 lg:pt-24 lg:justify-center lg:overflow-hidden">
+      <section id="pricing" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 min-h-screen lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-4 lg:pt-24 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-4">
@@ -1358,7 +1358,7 @@ export default function App() {
       </section>
 
       {/* 5. CONTACT FUNNEL SECTION */}
-      <section id="contact-funnel" className="relative py-12 px-6 lg:py-16 lg:px-12 border-t border-leaf-900/30 min-h-screen flex flex-col justify-start pt-20 lg:pt-24 lg:justify-center">
+      <section id="contact-funnel" className="relative py-12 px-6 lg:py-16 lg:px-12 border-t border-leaf-900/30 min-h-screen flex flex-col justify-start pt-4 lg:pt-24 lg:justify-center">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
