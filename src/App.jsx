@@ -965,7 +965,7 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative px-6 lg:px-12 bg-black border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-16 lg:justify-center lg:overflow-visible">
+      <section id="pricing" className="relative px-6 lg:px-12 bg-black border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-20 lg:justify-start lg:overflow-visible">
         <div className="max-w-7xl mx-auto w-full">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-4">
@@ -1393,7 +1393,7 @@ export default function App() {
       </section>
 
       {/* 5. CONTACT FUNNEL SECTION */}
-      <section id="contact-funnel" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-16 lg:justify-center">
+      <section id="contact-funnel" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-20 lg:justify-start">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
