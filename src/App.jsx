@@ -743,78 +743,78 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-12 lg:py-16 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-6">
+      <section id="services" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our Core <span className="text-leaf-400">Services</span></h2>
-            <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-1 text-center">Our Core <span className="text-leaf-400">Services</span></h2>
+            <p className="text-leaf-400 text-xs mt-2 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
             
             {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
+            <div className="w-full mt-4 flex justify-center">
               <RisingGlow
-                particleCount={80}
+                particleCount={60}
                 particleColor="#55b038"
-                height={80}
+                height={50}
                 width="100%"
               />
             </div>
           </div>
  
           {/* Moving Marquee banner */}
-          <div className="w-full border-y border-leaf-900/40 py-4 mb-10 select-none">
+          <div className="w-full border-y border-leaf-900/40 py-3 mb-6 select-none">
             <Marquee duration={30} pauseOnHover className="text-white">
-              <div className="flex items-center gap-12 text-sm md:text-base font-medium tracking-wider uppercase font-display">
+              <div className="flex items-center gap-12 text-xs md:text-sm font-medium tracking-wider uppercase font-display">
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Website Design & Rebuilds</span>
                 </span>
                 <span className="text-leaf-800">•</span>
                 
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Website Speed & Trust Cleanup</span>
                 </span>
                 <span className="text-leaf-800">•</span>
                 
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>AI Assistants & Chat Experiences</span>
                 </span>
                 <span className="text-leaf-800">•</span>
                 
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Business Automation & Workflows</span>
                 </span>
                 <span className="text-leaf-800">•</span>
                 
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Hosting & Website Care Plans</span>
                 </span>
                 <span className="text-leaf-800">•</span>
                 
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Client Intake & Client Portals</span>
                 </span>
                 <span className="text-leaf-800">•</span>
  
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>CRM & Sales-Support Systems</span>
                 </span>
                 <span className="text-leaf-800">•</span>
  
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>Branding & Mobile-First UX</span>
                 </span>
                 <span className="text-leaf-800">•</span>
  
                 <span className="flex items-center gap-2">
-                  <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
+                  <Leaf className="w-3.5 h-3.5 text-leaf-500 fill-current" />
                   <span>DevOps, QA & Rollback Backups</span>
                 </span>
                 <span className="text-leaf-800">•</span>
@@ -822,7 +822,7 @@ export default function App() {
             </Marquee>
           </div>
  
-          <div className="mb-4 flex justify-center max-w-full overflow-hidden">
+          <div className="flex justify-center max-w-full overflow-hidden">
             <CardStack
               items={cardStackItems}
               initialIndex={0}
@@ -830,34 +830,34 @@ export default function App() {
               intervalMs={3000}
               pauseOnHover
               showDots
-              cardWidth={480}
-              cardHeight={300}
+              cardWidth={420}
+              cardHeight={260}
             />
           </div>
         </div>
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-12 lg:py-16 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <section id="work" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
           {/* Header on top of gallery */}
-          <div className="text-center max-w-2xl mx-auto mb-4">
+          <div className="text-center max-w-2xl mx-auto mb-2">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Case Studies</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Work</span></h2>
-            <p className="text-leaf-400 mt-4 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-1 text-center">Our <span className="text-leaf-400">Work</span></h2>
+            <p className="text-leaf-400 text-xs mt-2 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
             {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
+            <div className="w-full mt-4 flex justify-center">
               <RisingGlow
-                particleCount={80}
+                particleCount={60}
                 particleColor="#55b038"
-                height={80}
+                height={50}
                 width="100%"
               />
             </div>
           </div>
 
           {/* Circular Flip Card Gallery */}
-          <div className="w-full relative flex items-center justify-center my-4 py-4 md:my-8">
+          <div className="w-full relative flex items-center justify-center my-2 py-2">
             <CircularGallery cards={circularCardData} />
           </div>
         </div>
