@@ -1361,7 +1361,7 @@ export default function App() {
       <footer id="estimate" className="relative bg-black border-t border-leaf-900/40 pt-16 pb-12 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Links & Brand footer */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left">
             <div>
               <div className="mb-6">
                 <Logo />
