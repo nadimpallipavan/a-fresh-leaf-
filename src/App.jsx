@@ -1554,21 +1554,11 @@ export default function App() {
                   maxWidth: "100%"
                 }}
               >
-                {previewUrl.includes("postalprosplus.com") ? (
-                  <div className="w-full h-full overflow-y-auto bg-neutral-950 flex flex-col items-center">
-                    <img
-                      src="./images/woocommerce_mockup.png"
-                      alt="PostalProsPlus Layout Showcase"
-                      className="w-full h-auto object-contain select-none pointer-events-none"
-                    />
-                  </div>
-                ) : (
-                  <iframe
-                    src={previewUrl}
-                    title={`Live preview of ${previewTitle}`}
-                    className="w-full h-full border-none bg-white"
-                  />
-                )}
+                <iframe
+                  src={previewUrl}
+                  title={`Live preview of ${previewTitle}`}
+                  className="w-full h-full border-none bg-white"
+                />
               </div>
             </div>
           </motion.div>
