@@ -942,28 +942,28 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto">
+      <section id="pricing" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Transparent Cost Structure</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Pricing</span></h2>
-            <p className="text-leaf-400 mt-4 font-light text-center">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-1 text-center">Our <span className="text-leaf-400">Pricing</span></h2>
+            <p className="text-leaf-400 text-xs mt-2 font-light text-center">
               Simple, value-backed project plans aligned with custom web design, speed upgrades, and CRM automations.
             </p>
             {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
+            <div className="w-full mt-4 flex justify-center">
               <RisingGlow
-                particleCount={80}
+                particleCount={60}
                 particleColor="#55b038"
-                height={80}
+                height={50}
                 width="100%"
               />
             </div>
           </div>
 
           {/* July 4th Special Content Banner */}
-          <div className="relative overflow-hidden rounded-[32px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-8 md:p-10 mb-16 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
+          <div className="relative overflow-hidden rounded-[24px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-4 md:p-6 mb-6 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
             <div className="absolute top-0 left-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase mb-4 font-mono">
               🇺🇸 Independence Day Special
@@ -1010,7 +1010,7 @@ export default function App() {
                 </div>
                 
                 {showAllFmps && (
-                  <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin mt-4">
+                  <ItemGroup className="space-y-3 max-h-[220px] overflow-y-auto pr-2 scrollbar-thin mt-4">
                     <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                       <ItemContent className="w-full">
                         <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
@@ -1145,7 +1145,7 @@ export default function App() {
                 </div>
                 
                 {showAllAfl && (
-                  <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin mt-4">
+                  <ItemGroup className="space-y-3 max-h-[220px] overflow-y-auto pr-2 scrollbar-thin mt-4">
                     <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                       <ItemContent className="w-full">
                         <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
@@ -1260,7 +1260,7 @@ export default function App() {
                 </div>
                 
                 {showAllSystems && (
-                  <ItemGroup className="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin mt-4">
+                  <ItemGroup className="space-y-3 max-h-[220px] overflow-y-auto pr-2 scrollbar-thin mt-4">
                     <Item variant="outline" className="border-leaf-900/60 p-3.5 bg-transparent hover:bg-leaf-900/10 rounded-xl transition-all duration-300">
                       <ItemContent className="w-full">
                         <ItemTitle className="text-xs font-bold text-leaf-300 flex justify-between items-center w-full">
