@@ -743,7 +743,7 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
+      <section id="services" className="relative h-[calc(100vh-60px)] min-h-[500px] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-4 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
@@ -838,7 +838,7 @@ export default function App() {
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+      <section id="work" className="relative h-[calc(100vh-60px)] min-h-[500px] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-4 lg:py-8 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
           {/* Header on top of gallery */}
           <div className="text-center max-w-2xl mx-auto mb-2">
@@ -864,30 +864,30 @@ export default function App() {
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-12 lg:py-16 px-6 lg:px-12 border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto flex flex-col items-center mb-8">
+      <section id="story" className="relative h-[calc(100vh-60px)] min-h-[500px] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-4 lg:py-8 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col items-center mb-4">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">About <span className="text-leaf-400">Us</span></h2>
-            <h3 className="text-lg md:text-xl font-sans font-semibold text-leaf-300 mt-4 leading-normal text-center">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mt-1 text-center">About <span className="text-leaf-400">Us</span></h2>
+            <h3 className="text-sm md:text-xl font-sans font-semibold text-leaf-300 mt-2 leading-normal text-center">
               Digital growth is not accidental. It is engineered.
             </h3>
             {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
+            <div className="w-full mt-2 flex justify-center">
               <RisingGlow
-                particleCount={80}
+                particleCount={40}
                 particleColor="#55b038"
-                height={80}
+                height={40}
                 width="100%"
               />
             </div>
           </div>
         </div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-16 items-center">
+ 
+        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center">
           {/* Story Left Media */}
           <div className="w-full lg:col-span-6 relative flex justify-center">
-            <div className="w-full max-w-sm aspect-square rounded-[32px] border border-leaf-800/40 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 relative flex items-center justify-center p-8 overflow-hidden shadow-2xl">
+            <div className="hidden lg:flex w-full max-w-sm aspect-square rounded-[32px] border border-leaf-800/40 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 relative items-center justify-center p-8 overflow-hidden shadow-2xl">
               {/* Pulsing Green Concentric Decorative Rings */}
               <div className="absolute w-64 h-64 rounded-full border border-leaf-500/5 animate-[spin_40s_linear_infinite]" />
               <div className="absolute w-52 h-52 rounded-full border border-dashed border-leaf-500/10 animate-[spin_20s_linear_infinite_reverse]" />
@@ -898,11 +898,11 @@ export default function App() {
               <Logo iconOnly className="w-36 h-36 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.2)]" />
             </div>
             {/* Absolute Glass Card overlay */}
-            <div className="md:absolute md:-bottom-6 md:-right-6 relative mt-6 mx-auto glass p-6 rounded-3xl border border-leaf-500/20 max-w-full md:max-w-xs shadow-2xl">
-              <p className="text-sm font-medium italic text-leaf-300">
+            <div className="lg:absolute lg:-bottom-6 lg:-right-6 relative mt-0 mx-auto glass p-4 rounded-3xl border border-leaf-500/20 max-w-full lg:max-w-xs shadow-2xl">
+              <p className="text-xs lg:text-sm font-medium italic text-leaf-300">
                 "Our philosophy is simple: Plant the seed, watch your business grow. We build web solutions that take root, scale, and rank."
               </p>
-              <div className="mt-4 flex items-center gap-3">
+              <div className="mt-3 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-leaf-800 flex items-center justify-center text-xs font-bold text-leaf-500">CF</div>
                 <div>
                   <h4 className="text-xs font-bold text-white">Collin Fraum</h4>
@@ -911,13 +911,13 @@ export default function App() {
               </div>
             </div>
           </div>
-
+ 
           {/* Story Right Content */}
           <div className="w-full lg:col-span-6 flex flex-col items-start text-left">
-            <p className="text-leaf-300 mt-4 font-light leading-relaxed text-base">
+            <p className="text-leaf-300 mt-2 font-light leading-relaxed text-sm hidden md:block">
               Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
             </p>
-            <div className="mt-8 space-y-6 w-full">
+            <div className="mt-4 space-y-4 w-full">
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
                   <ShieldCheck className="w-6 h-6" />
@@ -942,7 +942,7 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-6 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
+      <section id="pricing" className="relative h-[calc(100vh-60px)] min-h-[500px] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-center py-4 lg:py-8 px-6 lg:px-12 bg-black border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-4">
@@ -961,9 +961,14 @@ export default function App() {
               />
             </div>
           </div>
-
+ 
+          {/* Mobile Promo Alert */}
+          <div className="md:hidden bg-emerald-950/30 border border-emerald-500/20 text-emerald-400 rounded-xl p-2 mb-4 text-center font-bold text-[9px] uppercase tracking-wide">
+            🇺🇸 July 4th Special: 25% Off with code <strong className="bg-leaf-900 px-1.5 py-0.5 rounded text-white ml-1">AFL4TH25</strong>
+          </div>
+ 
           {/* July 4th Special Content Banner */}
-          <div className="relative overflow-hidden rounded-[24px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-4 md:p-6 mb-6 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md">
+          <div className="relative overflow-hidden rounded-[24px] border border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-leaf-950/40 to-neutral-900/20 p-4 md:p-6 mb-6 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md hidden md:block">
             <div className="absolute top-0 left-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase mb-4 font-mono">
               🇺🇸 Independence Day Special
