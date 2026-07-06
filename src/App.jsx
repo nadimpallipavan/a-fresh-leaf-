@@ -985,21 +985,7 @@ export default function App() {
             </div>
           </div>
  
-          {/* Mobile Promo Alert */}
-          <div className="md:hidden bg-emerald-950/30 border border-emerald-500/20 text-emerald-400 rounded-xl p-2 mb-4 text-center font-bold text-[9px] uppercase tracking-wide">
-            🇺🇸 July 4th Special: 25% Off with code <strong className="bg-leaf-900 px-1.5 py-0.5 rounded text-white ml-1">AFL4TH25</strong>
-          </div>
- 
-          {/* Compact Promo Banner */}
-          <div className="hidden md:flex bg-emerald-950/40 border border-emerald-500/20 rounded-full px-6 py-2.5 mb-6 text-xs font-semibold text-emerald-400 max-w-2xl mx-auto shadow-md items-center justify-between backdrop-blur-md">
-            <span className="flex items-center gap-2">
-              <span className="animate-pulse">🇺🇸</span>
-              <span>JULY 4TH SPECIAL: 25% OFF WEBSITE REBUILDS & CRM SETUP</span>
-            </span>
-            <span className="font-mono bg-leaf-900 text-white border border-leaf-800 px-2.5 py-0.5 rounded font-bold tracking-wide">
-              AFL4TH25
-            </span>
-          </div>
+
 
           <div onScroll={handlePricingScroll} className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-6 lg:px-0 scrollbar-thin">
             {/* Column 1: FMPS */}
@@ -1385,16 +1371,16 @@ export default function App() {
       {/* 5. CONTACT FUNNEL SECTION */}
       <section id="contact-funnel" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:min-h-[calc(100vh-90px)] flex flex-col justify-start pt-20 pb-28 lg:py-8 lg:justify-center">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-6 lg:mb-8">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Qualifying Flow</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-3">Free Speed & SEO <span className="text-leaf-400">Audit</span></h2>
-            <p className="text-leaf-400 mt-4 font-light">Complete our quick diagnostic questionnaire to queue your audit report callback with Collin Fraum.</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mt-1 text-center">Free Speed & SEO <span className="text-leaf-400">Audit</span></h2>
+            <p className="text-leaf-400 mt-2 font-light text-center">Complete our quick diagnostic questionnaire to queue your audit report callback with Collin Fraum.</p>
             {/* Rising Glow particle emitter */}
-            <div className="w-full mt-6 flex justify-center">
+            <div className="w-full mt-2 flex justify-center">
               <RisingGlow
                 particleCount={80}
                 particleColor="#55b038"
-                height={80}
+                height={40}
                 width="100%"
               />
             </div>
