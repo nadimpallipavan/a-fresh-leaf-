@@ -440,7 +440,7 @@ export default function App() {
         initial={{ y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 w-full z-50 glass py-3 border-b-0 md:border-b md:border-leaf-900/40 shadow-2xl px-6 lg:px-12"
+        className="fixed top-0 left-0 w-full z-50 glass py-3 border-none shadow-none md:border md:border-leaf-900/40 md:shadow-2xl px-6 lg:px-12"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#">
