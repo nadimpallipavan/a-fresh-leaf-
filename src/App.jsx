@@ -438,7 +438,8 @@ export default function App() {
 
           <div className="hidden md:flex items-center gap-4">
             <a 
-              href="#estimate" 
+              href="#contact-funnel" 
+              onClick={(e) => handleNavClick(e, "contact", "contact-funnel")}
               className="text-xs font-semibold uppercase tracking-wider bg-leaf-800 hover:bg-leaf-700 text-white px-5 py-2.5 rounded-full border border-leaf-700/50 hover:border-leaf-500/50 transition-all duration-300"
             >
               Get a Fresh Start
@@ -985,7 +986,16 @@ export default function App() {
             </div>
           </div>
  
-
+          {/* Mobile Promo Alert */}
+          <div className="md:hidden bg-emerald-950/30 border border-emerald-500/20 text-emerald-400 rounded-xl p-2 mb-4 text-center font-bold text-[9px] uppercase tracking-wide">
+            🇺🇸 July 4th Special: 25% Off Website Rebuilds & CRM Setup
+          </div>
+ 
+          {/* Compact Promo Banner */}
+          <div className="hidden md:flex bg-emerald-950/40 border border-emerald-500/20 rounded-full px-6 py-2 mb-6 text-xs font-semibold text-emerald-400 max-w-xl mx-auto shadow-md items-center justify-center gap-2 backdrop-blur-md">
+            <span className="animate-pulse">🇺🇸</span>
+            <span>JULY 4TH SPECIAL: 25% OFF WEBSITE REBUILDS & CRM SETUP</span>
+          </div>
 
           <div onScroll={handlePricingScroll} className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-6 lg:px-0 scrollbar-thin">
             {/* Column 1: FMPS */}
