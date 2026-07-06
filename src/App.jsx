@@ -440,7 +440,7 @@ export default function App() {
         initial={{ y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 w-full z-50 glass py-3 border-b-0 md:border-b border-leaf-900/40 shadow-2xl px-6 lg:px-12"
+        className="fixed top-0 left-0 w-full z-50 glass py-3 border-b-0 md:border-b md:border-leaf-900/40 shadow-2xl px-6 lg:px-12"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#">
@@ -551,10 +551,11 @@ export default function App() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="fixed inset-0 z-40 bg-leaf-950/95 backdrop-blur-lg pt-28 px-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-leaf-950/97 backdrop-blur-xl pt-28 px-8 md:hidden"
           >
             <div className="flex flex-col justify-center items-center h-full max-w-lg mx-auto pb-24">
               <InteractiveHoverLinks 
