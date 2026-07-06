@@ -105,7 +105,7 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
   return (
     <div
       ref={galleryRef}
-      className="relative w-full max-w-[340px] sm:max-w-[480px] md:max-w-[600px] aspect-square flex items-center justify-center mx-auto"
+      className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[460px] aspect-square flex items-center justify-center mx-auto"
     >
       {/* Central Logo */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
