@@ -259,6 +259,15 @@ export default function App() {
   const [showAllFmps, setShowAllFmps] = useState(false);
   const [showAllAfl, setShowAllAfl] = useState(false);
   const [showAllSystems, setShowAllSystems] = useState(false);
+  const [activePricingCard, setActivePricingCard] = useState(0);
+  const handlePricingScroll = (e) => {
+    const scrollLeft = e.target.scrollLeft;
+    const width = e.target.offsetWidth;
+    if (width > 0) {
+      const index = Math.round(scrollLeft / width);
+      setActivePricingCard(index);
+    }
+  };
   
   const [auditUrl, setAuditUrl] = useState("");
   const [auditStatus, setAuditStatus] = useState("idle"); // idle, scanning, success
@@ -912,15 +921,15 @@ export default function App() {
               <Logo iconOnly className="w-36 h-36 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_25px_rgba(90,200,120,0.2)]" />
             </div>
             {/* Absolute Glass Card overlay */}
-            <div className="lg:absolute lg:-bottom-6 lg:-right-6 relative mt-0 mx-auto glass p-4 rounded-3xl border border-leaf-500/20 max-w-full lg:max-w-xs shadow-2xl">
-              <p className="text-xs lg:text-sm font-medium italic text-leaf-300">
+            <div className="lg:absolute lg:-bottom-6 lg:-right-6 relative mt-0 mx-auto glass p-3 md:p-4 rounded-2xl md:rounded-3xl border border-leaf-500/20 max-w-full lg:max-w-xs shadow-2xl">
+              <p className="text-[11px] lg:text-sm font-medium italic text-leaf-300 leading-relaxed">
                 "Our philosophy is simple: Plant the seed, watch your business grow. We build web solutions that take root, scale, and rank."
               </p>
-              <div className="mt-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-leaf-800 flex items-center justify-center text-xs font-bold text-leaf-500">CF</div>
+              <div className="mt-2 flex items-center gap-3">
+                <div className="w-6 h-6 rounded-full bg-leaf-800 flex items-center justify-center text-[10px] font-bold text-leaf-500">CF</div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">Collin Fraum</h4>
-                  <p className="text-[10px] text-leaf-400">Founder & Lead Strategist</p>
+                  <h4 className="text-[10px] font-bold text-white leading-none">Collin Fraum</h4>
+                  <p className="text-[9px] text-leaf-400 mt-0.5 leading-none">Founder & Lead Strategist</p>
                 </div>
               </div>
             </div>
@@ -931,23 +940,23 @@ export default function App() {
             <p className="text-leaf-300 mt-2 font-light leading-relaxed text-sm hidden md:block">
               Most templates and off-the-shelf builders load hundreds of unused scripts, slowing down your website and hurting your SEO. At A Fresh Leaf, we hand-craft fast, clean-coded React platforms optimized to rank on page one and turn traffic into customers.
             </p>
-            <div className="mt-4 space-y-4 w-full">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
-                  <ShieldCheck className="w-6 h-6" />
+            <div className="mt-2 lg:mt-4 space-y-3 lg:space-y-4 w-full">
+              <div className="flex gap-3 lg:gap-4">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
+                  <ShieldCheck className="w-5 h-5 lg:w-6 lg:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Speed & Metric Audited</h4>
-                  <p className="text-sm text-leaf-400 mt-1">We optimize every asset, code split, and server layout to ensure a perfect 100/100 score on Core Web Vitals.</p>
+                  <h4 className="font-bold text-white text-xs lg:text-base">Speed & Metric Audited</h4>
+                  <p className="text-xs lg:text-sm text-leaf-400 mt-0.5 leading-relaxed">We optimize every asset, code split, and server layout to ensure a perfect 100/100 score on Core Web Vitals.</p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
-                  <Globe className="w-6 h-6" />
+              <div className="flex gap-3 lg:gap-4">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl bg-leaf-900/60 border border-leaf-800 flex-shrink-0 flex items-center justify-center text-leaf-400">
+                  <Globe className="w-5 h-5 lg:w-6 lg:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Localized SEO Authority</h4>
-                  <p className="text-sm text-leaf-400 mt-1">Ethical, rank-focused strategy designed to capture localized searches and outrank your target competition.</p>
+                  <h4 className="font-bold text-white text-xs lg:text-base">Localized SEO Authority</h4>
+                  <p className="text-xs lg:text-sm text-leaf-400 mt-0.5 leading-relaxed">Ethical, rank-focused strategy designed to capture localized searches and outrank your target competition.</p>
                 </div>
               </div>
             </div>
@@ -1002,7 +1011,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-6 lg:px-0 scrollbar-thin">
+          <div onScroll={handlePricingScroll} className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-6 lg:px-0 scrollbar-thin">
             {/* Column 1: FMPS */}
             <motion.div
               whileHover={{ y: -5 }}
@@ -1367,6 +1376,18 @@ export default function App() {
               </div>
               </BorderRotate>
             </motion.div>
+          </div>
+          
+          {/* Mobile Scroll Indicator Dots */}
+          <div className="flex justify-center gap-2 mt-4 lg:hidden">
+            {[0, 1, 2].map((idx) => (
+              <div
+                key={idx}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activePricingCard === idx ? "w-6 bg-leaf-400" : "w-1.5 bg-neutral-800"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </section>
