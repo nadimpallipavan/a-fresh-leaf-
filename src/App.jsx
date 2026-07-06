@@ -279,7 +279,20 @@ export default function App() {
   const handleAuditSubmit = (e) => {
     e.preventDefault();
     if (!auditUrl.trim()) return;
-    handleNavClick(e, "contact", "contact-funnel");
+    setAuditStatus("scanning");
+    setScanStep(0);
+    
+    const totalSteps = 4;
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      currentStep++;
+      if (currentStep < totalSteps) {
+        setScanStep(currentStep);
+      } else {
+        clearInterval(interval);
+        setAuditStatus("success");
+      }
+    }, 900);
   };
 
   // Mouse move parallax effect for hero
@@ -511,16 +524,159 @@ export default function App() {
             A fresh leaf builds custom websites, SEO, and digital strategy that take root and scale.
           </motion.p>
 
+          {/* Dynamic Speed Audit Scanner Panel */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="mt-10 w-full max-w-xl mx-auto glass p-6 rounded-3xl border border-leaf-500/20 shadow-2xl relative"
+          >
+            <AnimatePresence mode="wait">
+              {auditStatus === "idle" && (
+                <motion.div
+                  key="idle"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="flex flex-col gap-4 text-left"
+                >
+                  <label htmlFor="hero-audit-url" className="text-xs font-semibold uppercase tracking-wider text-leaf-300">
+                    Run a Free Page Speed Audit
+                  </label>
+                  <form onSubmit={handleAuditSubmit} className="flex gap-2 w-full">
+                    <input
+                      id="hero-audit-url"
+                      type="url"
+                      required
+                      placeholder="https://yourwebsite.com"
+                      value={auditUrl}
+                      onChange={(e) => setAuditUrl(e.target.value)}
+                      className="bg-black/40 border border-leaf-800 focus:border-leaf-500 text-white placeholder-leaf-700 text-sm px-4 py-3 rounded-2xl flex-grow focus:outline-none focus:ring-1 focus:ring-leaf-500 transition-all duration-300"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold px-6 py-3 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-leaf-500/10 cursor-pointer flex-shrink-0"
+                    >
+                      Audit
+                    </button>
+                  </form>
+                </motion.div>
+              )}
+
+              {auditStatus === "scanning" && (
+                <motion.div
+                  key="scanning"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="py-6 flex flex-col items-center justify-center text-center gap-4"
+                >
+                  {/* Glowing Loader */}
+                  <div className="relative w-16 h-16">
+                    <div className="absolute inset-0 rounded-full border-4 border-leaf-950" />
+                    <div className="absolute inset-0 rounded-full border-4 border-t-leaf-500 border-r-leaf-500 animate-spin" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-white animate-pulse">
+                      {[
+                        "Analyzing server response headers...",
+                        "Checking script load blockages...",
+                        "Calculating compression optimization ratios...",
+                        "Evaluating local mobile Core Web Vitals..."
+                      ][scanStep]}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-widest text-leaf-500 font-bold">Scanning Live Site Metrics</p>
+                  </div>
+                  {/* Progress Line */}
+                  <div className="w-48 h-1 bg-leaf-950 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-leaf-500"
+                      initial={{ width: "0%" }}
+                      animate={{ width: `${(scanStep + 1) * 25}%` }}
+                      transition={{ duration: 0.8 }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
+              {auditStatus === "success" && (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="flex flex-col gap-6 text-center"
+                >
+                  <div className="grid grid-cols-3 gap-4">
+                    {/* Dial 1 */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-full border-4 border-red-500/20 flex items-center justify-center relative bg-red-950/20 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                        <span className="text-lg font-bold text-red-500 font-mono">34</span>
+                        <div className="absolute inset-0 rounded-full border-t-4 border-t-red-500 rotate-[120deg]" />
+                      </div>
+                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">Performance</span>
+                    </div>
+
+                    {/* Dial 2 */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-full border-4 border-amber-500/20 flex items-center justify-center relative bg-amber-950/20 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+                        <span className="text-lg font-bold text-amber-500 font-mono font-sans">61</span>
+                        <div className="absolute inset-0 rounded-full border-t-4 border-t-amber-500 rotate-[220deg]" />
+                      </div>
+                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">Structure & UX</span>
+                    </div>
+
+                    {/* Dial 3 */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-full border-4 border-amber-500/20 flex items-center justify-center relative bg-amber-950/20 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+                        <span className="text-lg font-bold text-amber-500 font-mono font-sans">72</span>
+                        <div className="absolute inset-0 rounded-full border-t-4 border-t-amber-500 rotate-[260deg]" />
+                      </div>
+                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">SEO Setup</span>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-leaf-900/60 pt-4 text-left">
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                      Critical Performance Warning
+                    </h4>
+                    <p className="text-xs text-leaf-300 font-light leading-relaxed">
+                      We detected significant layout shifts and unoptimized media files causing slow mobile loading times on this URL. 
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-2 w-full">
+                    <button
+                      onClick={() => setAuditStatus("idle")}
+                      className="border border-leaf-800 hover:border-leaf-500 text-leaf-300 text-xs px-4 py-3 rounded-2xl font-bold uppercase tracking-wider transition-all duration-300 flex-1 cursor-pointer"
+                    >
+                      Audit Another Site
+                    </button>
+                    <a
+                      href="#contact-funnel"
+                      onClick={(e) => handleNavClick(e, "contact", "contact-funnel")}
+                      className="bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold px-6 py-3 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-leaf-500/20 flex-1 text-center cursor-pointer flex items-center justify-center gap-1.5"
+                    >
+                      Get Speed Report Callback
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
           {/* Scroll action indicator */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 1 }}
-            className="mt-16"
+            transition={{ delay: 1.1, duration: 1 }}
+            className="mt-12"
           >
             <a 
               href="#services" 
-              className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 hover:text-white transition-colors duration-300 font-bold"
+              className="text-[9px] uppercase tracking-[0.4em] text-zinc-500 hover:text-white transition-colors duration-300 font-bold"
             >
               Scroll to Explore
             </a>
