@@ -263,6 +263,48 @@ export default function App() {
   const [auditUrl, setAuditUrl] = useState("");
   const [auditStatus, setAuditStatus] = useState("idle"); // idle, scanning, success
   const [scanStep, setScanStep] = useState(0);
+  React.useEffect(() => {
+    const sections = [
+      { id: "home-hero", page: "home" },
+      { id: "services", page: "services" },
+      { id: "work", page: "work" },
+      { id: "story", page: "about" },
+      { id: "pricing", page: "pricing" },
+      { id: "contact-funnel", page: "contact" }
+    ];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -60% 0px",
+      threshold: 0
+    };
+    
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = sections.find(s => s.id === entry.target.id);
+          if (target) {
+            setCurrentPage(target.page);
+          }
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    sections.forEach(sec => {
+      const el = document.getElementById(sec.id);
+      if (el) observer.observe(el);
+    });
+    
+    return () => {
+      sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
 
   const handleNavClick = (e, page, elementId) => {
     if (e) e.preventDefault();
@@ -314,14 +356,14 @@ export default function App() {
       <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-leaf-800/20 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="fixed bottom-10 right-1/4 w-[600px] h-[600px] bg-leaf-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
 
-      {/* Floating header */}
+      {/* Edge-to-Edge Top Navigation Bar */}
       <motion.nav 
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="fixed top-0 left-0 w-full z-50 px-6 py-4 lg:px-12"
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="fixed top-0 left-0 w-full z-50 glass py-3 border-b border-leaf-900/40 shadow-2xl px-6 lg:px-12"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between glass px-6 py-3.5 rounded-full shadow-lg border border-leaf-900/40">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#">
             <Logo />
           </a>
