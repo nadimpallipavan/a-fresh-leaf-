@@ -983,11 +983,11 @@ export default function App() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="flex overflow-x-auto snap-x gap-6 lg:grid lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto pb-6 px-4 lg:px-0 scrollbar-thin">
             {/* Column 1: FMPS */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl"
+              className="relative overflow-hidden rounded-3xl min-w-[280px] xs:min-w-[320px] snap-center flex-shrink-0 lg:min-w-0 w-[85%] lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
@@ -1122,7 +1122,7 @@ export default function App() {
             {/* Column 2: AFL Web Services */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl"
+              className="relative overflow-hidden rounded-3xl min-w-[280px] xs:min-w-[320px] snap-center flex-shrink-0 lg:min-w-0 w-[85%] lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
@@ -1237,7 +1237,7 @@ export default function App() {
             {/* Column 3: AI & System Operations */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl"
+              className="relative overflow-hidden rounded-3xl min-w-[280px] xs:min-w-[320px] snap-center flex-shrink-0 lg:min-w-0 w-[85%] lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
