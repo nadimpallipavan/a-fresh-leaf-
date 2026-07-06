@@ -253,6 +253,65 @@ const TUBE_BASE_COLORS = ["#55b038", "#55b038", "#55b038"];
 const TUBE_LIGHT_COLORS = ["#55b038", "#55b038", "#55b038", "#55b038"];
 
 export default function App() {
+  const [selectedServiceForDetails, setSelectedServiceForDetails] = useState(null);
+  
+  const serviceFeatures = {
+    "001": [
+      "Custom-coded UI mockups and design iteration loops.",
+      "100% mobile-first optimized layouts and grid systems.",
+      "High-converting copy and call-to-action sections.",
+      "Semantic HTML5 tags for accessibility & SEO."
+    ],
+    "002": [
+      "Targeted cleanups for 90+ Core Web Vitals scores.",
+      "Next-generation WebP/AVIF image asset compression.",
+      "Javascript thread cleanup and database optimization.",
+      "Local security sweeps and trust badges setups."
+    ],
+    "003": [
+      "Support chat configurations trained on custom content.",
+      "Real-time chatbot integrations and API lead piping.",
+      "Customer pre-qualification automation logic.",
+      "Slack/email live alerts for custom inquiries."
+    ],
+    "004": [
+      "Calendar booking sequences (Calendly/tidycal setups).",
+      "Automatic custom emails and SMS follow-ups.",
+      "Automated lead piping into HubSpot or target CRM.",
+      "Workflow mapping for sales and client intake."
+    ],
+    "005": [
+      "Enterprise Cloud VPS hosting with staging area.",
+      "Daily backup retention with 1-click system restore.",
+      "Real-time firewall, malware scans, and updates.",
+      "Direct phone and email technical developer support."
+    ],
+    "006": [
+      "Bespoke login areas and secure document uploads.",
+      "Client dashboard to view project progress bars.",
+      "Invoice and billing setup with Stripe/QuickBooks.",
+      "Integrated client query support forms."
+    ],
+    "007": [
+      "Sales pipeline configurations and status tags.",
+      "Lead routing based on urgency and qualification.",
+      "Custom triggers for text message / email alerts.",
+      "Historic interaction logging and search tools."
+    ],
+    "008": [
+      "Custom brand color palette definitions.",
+      "Typography styling systems and logo lockups.",
+      "Optimized visual layouts for finger-tap actions.",
+      "Consistency audits across subpages."
+    ],
+    "009": [
+      "Secure Git environments with branch controls.",
+      "Staging server deployments for client previews.",
+      "Automated browser compatibility checking.",
+      "Backup recovery configuration."
+    ]
+  };
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedTimeline, setSelectedTimeline] = useState(0);
   const [currentPage, setCurrentPage] = useState("home");
@@ -583,148 +642,7 @@ export default function App() {
             A fresh leaf builds custom websites, SEO, and digital strategy that take root and scale.
           </motion.p>
 
-          {/* Dynamic Speed Audit Scanner Panel */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
-            className="mt-10 w-full max-w-xl mx-auto glass p-6 rounded-3xl border border-leaf-500/20 shadow-2xl relative"
-          >
-            <AnimatePresence mode="wait">
-              {auditStatus === "idle" && (
-                <motion.div
-                  key="idle"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="flex flex-col gap-4 text-left"
-                >
-                  <label htmlFor="hero-audit-url" className="text-xs font-semibold uppercase tracking-wider text-leaf-300">
-                    Run a Free Page Speed Audit
-                  </label>
-                  <form onSubmit={handleAuditSubmit} className="flex gap-2 w-full">
-                    <input
-                      id="hero-audit-url"
-                      type="url"
-                      required
-                      placeholder="https://yourwebsite.com"
-                      value={auditUrl}
-                      onChange={(e) => setAuditUrl(e.target.value)}
-                      className="bg-black/40 border border-leaf-800 focus:border-leaf-500 text-white placeholder-leaf-700 text-sm px-4 py-3 rounded-2xl flex-grow focus:outline-none focus:ring-1 focus:ring-leaf-500 transition-all duration-300"
-                    />
-                    <button
-                      type="submit"
-                      className="bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold px-6 py-3 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-leaf-500/10 cursor-pointer flex-shrink-0"
-                    >
-                      Audit
-                    </button>
-                  </form>
-                </motion.div>
-              )}
 
-              {auditStatus === "scanning" && (
-                <motion.div
-                  key="scanning"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="py-6 flex flex-col items-center justify-center text-center gap-4"
-                >
-                  {/* Glowing Loader */}
-                  <div className="relative w-16 h-16">
-                    <div className="absolute inset-0 rounded-full border-4 border-leaf-950" />
-                    <div className="absolute inset-0 rounded-full border-4 border-t-leaf-500 border-r-leaf-500 animate-spin" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-sm font-semibold text-white animate-pulse">
-                      {[
-                        "Analyzing server response headers...",
-                        "Checking script load blockages...",
-                        "Calculating compression optimization ratios...",
-                        "Evaluating local mobile Core Web Vitals..."
-                      ][scanStep]}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-widest text-leaf-500 font-bold">Scanning Live Site Metrics</p>
-                  </div>
-                  {/* Progress Line */}
-                  <div className="w-48 h-1 bg-leaf-950 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-leaf-500"
-                      initial={{ width: "0%" }}
-                      animate={{ width: `${(scanStep + 1) * 25}%` }}
-                      transition={{ duration: 0.8 }}
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              {auditStatus === "success" && (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="flex flex-col gap-6 text-center"
-                >
-                  <div className="grid grid-cols-3 gap-4">
-                    {/* Dial 1 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full border-4 border-red-500/20 flex items-center justify-center relative bg-red-950/20 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
-                        <span className="text-lg font-bold text-red-500 font-mono">34</span>
-                        <div className="absolute inset-0 rounded-full border-t-4 border-t-red-500 rotate-[120deg]" />
-                      </div>
-                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">Performance</span>
-                    </div>
-
-                    {/* Dial 2 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full border-4 border-amber-500/20 flex items-center justify-center relative bg-amber-950/20 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
-                        <span className="text-lg font-bold text-amber-500 font-mono font-sans">61</span>
-                        <div className="absolute inset-0 rounded-full border-t-4 border-t-amber-500 rotate-[220deg]" />
-                      </div>
-                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">Structure & UX</span>
-                    </div>
-
-                    {/* Dial 3 */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full border-4 border-amber-500/20 flex items-center justify-center relative bg-amber-950/20 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
-                        <span className="text-lg font-bold text-amber-500 font-mono font-sans">72</span>
-                        <div className="absolute inset-0 rounded-full border-t-4 border-t-amber-500 rotate-[260deg]" />
-                      </div>
-                      <span className="text-[9px] uppercase tracking-wider text-leaf-400 font-bold mt-2">SEO Setup</span>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-leaf-900/60 pt-4 text-left">
-                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                      Critical Performance Warning
-                    </h4>
-                    <p className="text-xs text-leaf-300 font-light leading-relaxed">
-                      We detected significant layout shifts and unoptimized media files causing slow mobile loading times on this URL. 
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-2 w-full">
-                    <button
-                      onClick={() => setAuditStatus("idle")}
-                      className="border border-leaf-800 hover:border-leaf-500 text-leaf-300 text-xs px-4 py-3 rounded-2xl font-bold uppercase tracking-wider transition-all duration-300 flex-1 cursor-pointer"
-                    >
-                      Audit Another Site
-                    </button>
-                    <a
-                      href="#contact-funnel"
-                      onClick={(e) => handleNavClick(e, "contact", "contact-funnel")}
-                      className="bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold px-6 py-3 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-leaf-500/20 flex-1 text-center cursor-pointer flex items-center justify-center gap-1.5"
-                    >
-                      Get Speed Report Callback
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
 
           {/* Scroll action indicator */}
           <motion.div 
@@ -842,6 +760,40 @@ export default function App() {
               showDots
               cardWidth={420}
               cardHeight={260}
+              renderCard={(item, { active }) => (
+                <div className="relative h-full w-full group overflow-hidden">
+                  {item.imageSrc ? (
+                    <img
+                      src={item.imageSrc}
+                      alt={item.title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      draggable={false}
+                      loading="eager"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-emerald-950 via-leaf-950 to-neutral-950" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
+                  
+                  <div className="absolute inset-0 p-5 flex flex-col justify-end text-left z-10">
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-leaf-400 mb-1">A Fresh Leaf • Service</span>
+                    <h4 className="text-sm lg:text-base font-bold text-white leading-tight mb-1">{item.title}</h4>
+                    <p className="text-[10px] text-leaf-300 line-clamp-2 leading-relaxed mb-3">{item.description}</p>
+                    
+                    {active && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedServiceForDetails(item);
+                        }}
+                        className="bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold px-4 py-2 rounded-xl text-[10px] uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer self-start"
+                      >
+                        What We Provide →
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
             />
           </div>
         </div>
@@ -1473,6 +1425,69 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Service Details Feature Modal */}
+      <AnimatePresence>
+        {selectedServiceForDetails && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedServiceForDetails(null)}
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-6"
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 15 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 15 }}
+              onClick={(e) => e.stopPropagation()}
+              className="glass max-w-md w-full p-8 rounded-[32px] border border-leaf-500/20 text-left relative"
+            >
+              <button
+                onClick={() => setSelectedServiceForDetails(null)}
+                className="absolute top-4 right-4 text-leaf-400 hover:text-white transition-colors text-sm font-bold w-8 h-8 rounded-full bg-leaf-950/80 border border-leaf-900 flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-leaf-500">Service Deliverables</span>
+              <h3 className="text-xl font-serif font-bold text-white mt-2 mb-4">{selectedServiceForDetails.title}</h3>
+              
+              <ul className="space-y-3">
+                {(serviceFeatures[selectedServiceForDetails.id] || []).map((feat, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-leaf-950/60 border border-leaf-800 flex items-center justify-center flex-shrink-0 text-leaf-400 text-[10px] mt-0.5">
+                      ✓
+                    </div>
+                    <span className="text-xs text-leaf-200 leading-normal font-light">{feat}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <button
+                onClick={() => {
+                  setSelectedServiceForDetails(null);
+                  setCurrentPage("contact");
+                  setTimeout(() => {
+                    const element = document.getElementById("contact-funnel");
+                    if (element) {
+                      const headerOffset = 90;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                      });
+                    }
+                  }, 100);
+                }}
+                className="mt-8 w-full bg-leaf-500 hover:bg-leaf-600 text-leaf-950 font-bold py-3 rounded-2xl text-xs uppercase tracking-widest transition-all duration-300 shadow-lg text-center cursor-pointer"
+              >
+                Request This Service
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
