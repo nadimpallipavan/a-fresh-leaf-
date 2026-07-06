@@ -90,6 +90,7 @@ interface CircularGalleryProps {
 export default function CircularGallery({ cards, onSelectCard }: CircularGalleryProps) {
   const galleryRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
  
   // Effect for responsive sizing
   useEffect(() => {
@@ -124,12 +125,18 @@ export default function CircularGallery({ cards, onSelectCard }: CircularGallery
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none p-4">
         <Logo iconOnly className="w-12 h-12 xs:w-16 xs:h-16 md:w-20 md:h-20 animate-pulse drop-shadow-[0_0_20px_rgba(90,200,120,0.2)]" />
         <p className="text-[9px] md:text-xs text-leaf-500 uppercase tracking-widest font-semibold mt-2">
-          Hover to Flip
+          Tap to Flip
         </p>
       </div>
  
       {/* Circular arrangement of cards */}
-      <div className="absolute inset-0 animate-spin-slow pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
+      <div 
+        className={cn(
+          "absolute inset-0 animate-spin-slow pointer-events-none",
+          isPaused ? "[animation-play-state:paused]" : ""
+        )}
+        style={{ transformStyle: "preserve-3d" }}
+      >
         {size > 0 &&
           cards.map((card, index) => {
             // Position cards evenly in the circle
@@ -138,17 +145,24 @@ export default function CircularGallery({ cards, onSelectCard }: CircularGallery
             const y = centerY + radius * Math.sin(angle)
  
             return (
-              <FlipCard
+              <div
                 key={index}
-                {...card}
-                onSelectCard={onSelectCard}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
                 className="absolute hover:z-20 pointer-events-auto"
                 style={{
                   left: `${x}px`,
                   top: `${y}px`,
                   transform: `translate(-50%, -50%) rotate(${(angle + Math.PI / 2) * (180 / Math.PI)}deg)`,
                 }}
-              />
+              >
+                <FlipCard
+                  {...card}
+                  onSelectCard={onSelectCard}
+                />
+              </div>
             )
           })}
       </div>
