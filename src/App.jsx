@@ -743,9 +743,9 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-24 lg:py-36 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
+      <section id="services" className="relative py-12 lg:py-16 px-6 lg:px-12 bg-black border-t border-leaf-900/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-6">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our Core <span className="text-leaf-400">Services</span></h2>
             <p className="text-leaf-400 mt-4 font-light">Leverage state-of-the-art web technology and data-backed search engine optimization built to convert.</p>
@@ -760,9 +760,9 @@ export default function App() {
               />
             </div>
           </div>
-
+ 
           {/* Moving Marquee banner */}
-          <div className="w-full border-y border-leaf-900/40 py-6 mb-20 select-none">
+          <div className="w-full border-y border-leaf-900/40 py-4 mb-10 select-none">
             <Marquee duration={30} pauseOnHover className="text-white">
               <div className="flex items-center gap-12 text-sm md:text-base font-medium tracking-wider uppercase font-display">
                 <span className="flex items-center gap-2">
@@ -800,19 +800,19 @@ export default function App() {
                   <span>Client Intake & Client Portals</span>
                 </span>
                 <span className="text-leaf-800">•</span>
-
+ 
                 <span className="flex items-center gap-2">
                   <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
                   <span>CRM & Sales-Support Systems</span>
                 </span>
                 <span className="text-leaf-800">•</span>
-
+ 
                 <span className="flex items-center gap-2">
                   <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
                   <span>Branding & Mobile-First UX</span>
                 </span>
                 <span className="text-leaf-800">•</span>
-
+ 
                 <span className="flex items-center gap-2">
                   <Leaf className="w-4 h-4 text-leaf-500 fill-current" />
                   <span>DevOps, QA & Rollback Backups</span>
@@ -821,8 +821,8 @@ export default function App() {
               </div>
             </Marquee>
           </div>
-
-          <div className="mb-20 flex justify-center max-w-full overflow-hidden">
+ 
+          <div className="mb-4 flex justify-center max-w-full overflow-hidden">
             <CardStack
               items={cardStackItems}
               initialIndex={0}
@@ -838,10 +838,10 @@ export default function App() {
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
+      <section id="work" className="relative py-12 lg:py-16 px-6 lg:px-12 border-t border-leaf-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           {/* Header on top of gallery */}
-          <div className="text-center max-w-2xl mx-auto mb-8">
+          <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Case Studies</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">Our <span className="text-leaf-400">Work</span></h2>
             <p className="text-leaf-400 mt-4 font-light text-center">Explore modern design architectures, web interfaces, and high-performance applications built for digital growth.</p>
@@ -857,15 +857,15 @@ export default function App() {
           </div>
 
           {/* Circular Flip Card Gallery */}
-          <div className="w-full relative flex items-center justify-center my-8 py-8 md:my-16">
+          <div className="w-full relative flex items-center justify-center my-4 py-4 md:my-8">
             <CircularGallery cards={circularCardData} />
           </div>
         </div>
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-24 lg:py-36 px-6 lg:px-12 border-t border-leaf-900/30">
-        <div className="max-w-7xl mx-auto flex flex-col items-center mb-16">
+      <section id="story" className="relative py-12 lg:py-16 px-6 lg:px-12 border-t border-leaf-900/30">
+        <div className="max-w-7xl mx-auto flex flex-col items-center mb-8">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 text-center">About <span className="text-leaf-400">Us</span></h2>
