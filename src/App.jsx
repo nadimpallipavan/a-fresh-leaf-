@@ -743,7 +743,7 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-12 lg:justify-center lg:overflow-hidden">
+      <section id="services" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
@@ -838,7 +838,7 @@ export default function App() {
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-12 lg:justify-center lg:overflow-hidden">
+      <section id="work" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
           {/* Header on top of gallery */}
           <div className="text-center max-w-2xl mx-auto mb-2">
@@ -864,7 +864,7 @@ export default function App() {
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-12 lg:justify-center lg:overflow-hidden">
+      <section id="story" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center mb-4">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
@@ -884,9 +884,16 @@ export default function App() {
           </div>
         </div>
  
-        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center">
           {/* Story Left Media */}
-          <div className="w-full lg:col-span-6 relative flex justify-center">
+          <div className="w-full lg:col-span-6 relative flex flex-col items-center justify-center gap-2">
+            {/* Mobile Logo Showcase */}
+            <div className="lg:hidden flex items-center justify-center my-1">
+              <div className="w-16 h-16 rounded-2xl border border-leaf-800/20 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 flex items-center justify-center shadow-lg">
+                <Logo iconOnly className="w-8 h-8 animate-pulse filter drop-shadow-[0_0_10px_rgba(90,200,120,0.2)]" />
+              </div>
+            </div>
+ 
             <div className="hidden lg:flex w-full max-w-sm aspect-square rounded-[32px] border border-leaf-800/40 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 relative items-center justify-center p-8 overflow-hidden shadow-2xl">
               {/* Pulsing Green Concentric Decorative Rings */}
               <div className="absolute w-64 h-64 rounded-full border border-leaf-500/5 animate-[spin_40s_linear_infinite]" />
@@ -942,7 +949,7 @@ export default function App() {
       </section>
 
       {/* Managed WordPress Hosting Sub-Section */}
-      <section id="pricing" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-12 lg:justify-center lg:overflow-hidden">
+      <section id="pricing" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-24 lg:justify-center lg:overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-4">
@@ -992,7 +999,7 @@ export default function App() {
             {/* Column 1: FMPS */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
+              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] min-h-[300px] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
@@ -1127,7 +1134,7 @@ export default function App() {
             {/* Column 2: AFL Web Services */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
+              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] min-h-[300px] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
@@ -1242,7 +1249,7 @@ export default function App() {
             {/* Column 3: AI & System Operations */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
+              className="relative overflow-hidden rounded-3xl min-w-[calc(100vw-48px)] w-[calc(100vw-48px)] min-h-[300px] snap-start flex-shrink-0 lg:min-w-0 lg:w-auto"
             >
               <BorderRotate
                 borderRadius={24}
