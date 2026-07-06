@@ -743,7 +743,7 @@ export default function App() {
 
 
       {/* 3. PRODUCT SHOWCASE SECTION */}
-      <section id="services" className="relative py-12 px-6 lg:py-8 lg:px-12 bg-black border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
+      <section id="services" className="relative px-6 lg:px-12 bg-black border-t border-leaf-900/30 min-h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 pb-28 lg:justify-center lg:overflow-hidden lg:pt-24">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-2xl mx-auto mb-4">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Tailored Growth Solutions</span>
@@ -838,7 +838,7 @@ export default function App() {
       </section>
 
       {/* 4. OUR WORK SECTION */}
-      <section id="work" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
+      <section id="work" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 pb-28 lg:justify-center lg:overflow-hidden lg:pt-24">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
           {/* Header on top of gallery */}
           <div className="text-center max-w-2xl mx-auto mb-2">
@@ -864,7 +864,7 @@ export default function App() {
       </section>
 
       {/* 2. THE STORY / PHILOSOPHY */}
-      <section id="story" className="relative py-12 px-6 lg:py-8 lg:px-12 border-t border-leaf-900/30 h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-between pt-4 pb-20 lg:justify-center lg:overflow-hidden">
+      <section id="story" className="relative px-6 lg:px-12 border-t border-leaf-900/30 min-h-[100dvh] lg:h-[calc(100vh-70px)] lg:min-h-[650px] flex flex-col justify-start pt-20 pb-28 lg:justify-center lg:overflow-hidden lg:pt-24">
         <div className="max-w-7xl mx-auto flex flex-col items-center mb-4">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-leaf-500">Rooted in Performance</span>
@@ -888,9 +888,16 @@ export default function App() {
           {/* Story Left Media */}
           <div className="w-full lg:col-span-6 relative flex flex-col items-center justify-center gap-2">
             {/* Mobile Logo Showcase */}
-            <div className="lg:hidden flex items-center justify-center my-1">
-              <div className="w-16 h-16 rounded-2xl border border-leaf-800/20 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 flex items-center justify-center shadow-lg">
-                <Logo iconOnly className="w-8 h-8 animate-pulse filter drop-shadow-[0_0_10px_rgba(90,200,120,0.2)]" />
+            <div className="lg:hidden flex items-center justify-center my-2">
+              <div className="w-40 h-40 rounded-[24px] border border-leaf-800/40 bg-gradient-to-br from-leaf-950 via-black to-neutral-900 relative flex items-center justify-center overflow-hidden shadow-2xl">
+                {/* Pulsing Green Concentric Decorative Rings */}
+                <div className="absolute w-32 h-32 rounded-full border border-leaf-500/5 animate-[spin_40s_linear_infinite]" />
+                <div className="absolute w-24 h-24 rounded-full border border-dashed border-leaf-500/10 animate-[spin_20s_linear_infinite_reverse]" />
+                <div className="absolute w-16 h-16 rounded-full border border-leaf-500/15" />
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-leaf-900/5 via-transparent to-leaf-900/5 pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-leaf-500/5 rounded-full blur-[30px] pointer-events-none" />
+                <Logo iconOnly className="w-16 h-16 relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_15px_rgba(90,200,120,0.2)]" />
               </div>
             </div>
  
