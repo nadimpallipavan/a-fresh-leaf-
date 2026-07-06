@@ -16,9 +16,10 @@ interface FlipCardProps {
   padding?: string
   className?: string
   style?: React.CSSProperties
+  onSelectCard?: (url: string, title: string) => void
 }
-
-function FlipCard({ image, title, description, url, bgColor, padding, className, style }: FlipCardProps) {
+ 
+function FlipCard({ image, title, description, url, bgColor, padding, className, style, onSelectCard }: FlipCardProps) {
   return (
     <div
       className={cn(
@@ -46,14 +47,17 @@ function FlipCard({ image, title, description, url, bgColor, padding, className,
         <div className="absolute inset-0 rounded-xl bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center p-1.5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <h3 className="font-bold text-[8px] md:text-[9.5px] tracking-tighter text-neutral-100 mb-2.5 text-center whitespace-nowrap overflow-visible max-w-full px-0.5">{title}</h3>
           {url && (
-            <a 
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[8px] md:text-[9px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-wider pointer-events-auto border border-leaf-500/20 px-2 py-0.5 rounded-full bg-neutral-900/80 hover:bg-neutral-900 transition-colors"
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (onSelectCard) {
+                  onSelectCard(url, title);
+                }
+              }}
+              className="text-[8px] md:text-[9px] font-bold text-leaf-500 hover:text-leaf-300 uppercase tracking-wider pointer-events-auto border border-leaf-500/20 px-2 py-0.5 rounded-full bg-neutral-900/80 hover:bg-neutral-900 transition-colors cursor-pointer"
             >
               Visit Site →
-            </a>
+            </button>
           )}
         </div>
       </div>
@@ -72,12 +76,13 @@ interface CircularGalleryProps {
     bgColor?: string
     padding?: string
   }[]
+  onSelectCard?: (url: string, title: string) => void
 }
-
-export default function CircularGallery({ cards }: CircularGalleryProps) {
+ 
+export default function CircularGallery({ cards, onSelectCard }: CircularGalleryProps) {
   const galleryRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState(0)
-
+ 
   // Effect for responsive sizing
   useEffect(() => {
     const updateSize = () => {
@@ -86,22 +91,22 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
         setSize(gallerySize)
       }
     }
-
+ 
     updateSize() // Initial size
-
+ 
     const resizeObserver = new ResizeObserver(updateSize)
     if (galleryRef.current) {
       resizeObserver.observe(galleryRef.current)
     }
-
+ 
     return () => resizeObserver.disconnect()
   }, [])
-
+ 
   const radiusMultiplier = size < 400 ? 0.48 : 0.44
   const radius = size * radiusMultiplier // Dynamically pushes cards further out on small screens
   const centerX = size / 2
   const centerY = size / 2
-
+ 
   return (
     <div
       ref={galleryRef}
@@ -114,7 +119,7 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
           Hover to Flip
         </p>
       </div>
-
+ 
       {/* Circular arrangement of cards */}
       <div className="absolute inset-0 animate-spin-slow pointer-events-none" style={{ transformStyle: "preserve-3d" }}>
         {size > 0 &&
@@ -123,11 +128,12 @@ export default function CircularGallery({ cards }: CircularGalleryProps) {
             const angle = (index / cards.length) * 2 * Math.PI - Math.PI / 2
             const x = centerX + radius * Math.cos(angle)
             const y = centerY + radius * Math.sin(angle)
-
+ 
             return (
               <FlipCard
                 key={index}
                 {...card}
+                onSelectCard={onSelectCard}
                 className="absolute hover:z-20 pointer-events-auto"
                 style={{
                   left: `${x}px`,

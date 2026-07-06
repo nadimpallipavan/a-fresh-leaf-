@@ -254,6 +254,9 @@ const TUBE_LIGHT_COLORS = ["#55b038", "#55b038", "#55b038", "#55b038"];
 
 export default function App() {
   const [selectedServiceForDetails, setSelectedServiceForDetails] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [previewTitle, setPreviewTitle] = useState("");
+  const [deviceFrame, setDeviceFrame] = useState("desktop");
   
   const serviceFeatures = {
     "001": [
@@ -820,7 +823,7 @@ export default function App() {
 
           {/* Circular Flip Card Gallery */}
           <div className="w-full relative flex items-center justify-center my-2 py-2">
-            <CircularGallery cards={circularCardData} />
+            <CircularGallery cards={circularCardData} onSelectCard={(url, title) => { setPreviewUrl(url); setPreviewTitle(title); }} />
           </div>
         </div>
       </section>
@@ -1485,6 +1488,76 @@ export default function App() {
                 Request This Service
               </button>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Live Portfolio Previewer Modal */}
+      <AnimatePresence>
+        {previewUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-md flex flex-col"
+          >
+            {/* Top Bar Controls */}
+            <div className="w-full bg-neutral-950 border-b border-leaf-900/40 p-4 flex items-center justify-between z-20">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-leaf-500">Live Client Showcase</span>
+                <span className="text-leaf-800">|</span>
+                <h3 className="text-sm font-semibold text-white">{previewTitle}</h3>
+              </div>
+              
+              {/* Device Frame Toggles */}
+              <div className="hidden sm:flex items-center gap-2 bg-leaf-950/60 border border-leaf-900 p-1 rounded-full">
+                <button
+                  onClick={() => setDeviceFrame("desktop")}
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "desktop" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                >
+                  Desktop
+                </button>
+                <button
+                  onClick={() => setDeviceFrame("tablet")}
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "tablet" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                >
+                  Tablet
+                </button>
+                <button
+                  onClick={() => setDeviceFrame("mobile")}
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${deviceFrame === "mobile" ? "bg-leaf-500 text-leaf-950" : "text-leaf-400 hover:text-white"}`}
+                >
+                  Mobile
+                </button>
+              </div>
+              
+              <button
+                onClick={() => {
+                  setPreviewUrl(null);
+                  setPreviewTitle("");
+                }}
+                className="bg-leaf-900/80 border border-leaf-800 hover:border-leaf-500 text-leaf-300 hover:text-white font-bold px-4 py-1.5 rounded-full text-[10px] uppercase tracking-wider transition-all duration-300 cursor-pointer"
+              >
+                ✕ Close Preview
+              </button>
+            </div>
+            
+            {/* Frame Body */}
+            <div className="flex-1 w-full flex items-center justify-center p-4 bg-neutral-900/50">
+              <div
+                className="h-full bg-white rounded-2xl border border-leaf-900/40 overflow-hidden shadow-2xl transition-all duration-500"
+                style={{
+                  width: deviceFrame === "desktop" ? "100%" : deviceFrame === "tablet" ? "768px" : "375px",
+                  maxWidth: "100%"
+                }}
+              >
+                <iframe
+                  src={previewUrl}
+                  title={`Live preview of ${previewTitle}`}
+                  className="w-full h-full border-none bg-white"
+                />
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
